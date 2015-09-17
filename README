@@ -1,0 +1,56 @@
+key = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER,'Software\\Transporter Desktop')
+path _winreg.QueryValueEx(key, 'HomeFolderPath')[0]
+
+1. Claim device (CS call)
+2. Create pool (CS call)
+3. Add subscriber (CS call)
+4. Create FS structure (from client)
+5. Validate synchronization
+6. Delete pool (CS call)
+7. Unclaim device (CS call)
+
+
+sudo /etc/init.d/replicator start
+
+cmd = "echo "+passwd+"|sudo -S -p '' upgrade-manager full none none "+path
+
+            nongrata = ['desktop.ini','.DS_Store','Thumbs.db']
+
+            source = seller.readTree(pool_name)
+
+            log.debug("Perform clen-up on the tree list from source.")
+            self.cleanList(source,nongrata)
+
+            log.debug("Will sleep 10 cycles for synchronization.")
+            for x in range (1,11):
+                log.debug("This is cycle No."+str(x))
+                time.sleep(self.timeout)
+
+            destination = buyer.readTree(pool_name)
+
+            log.debug("Perform clen-up on the tree list from destination.")
+            self.cleanList(source,nongrata)
+
+            diff = list(set(source) - set(destination))
+            last = len(diff)
+            if last == 0:
+                log.info("Source and destination are the same.")
+                return 0
+            else:
+                log.info("Source and distination are different.")
+                x = 1
+                for element in diff:
+                    log.debug(str(x).zfill(len(str(last)))+". '"+element+"'.")
+                    x = x + 1
+                return 1
+
+    def cleanList(self,list,nongrata):
+
+        log.debug("Removing ignored files from the list.")
+
+        for ignored in nongrata:
+            for line in list:
+                if ignored in line:
+                    list.remove(line)
+
+        return list

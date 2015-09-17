@@ -1,0 +1,17 @@
+[access]
+address=10.25.1.82
+port=2226
+
+[credentials]
+user=embedded
+password=2iko.8gas
+
+[hardware]
+type=TFB
+power=7
+sn=CDC150440098
+
+[build]
+build=last
+firmware=4.2
+type=dev

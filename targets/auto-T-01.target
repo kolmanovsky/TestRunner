@@ -1,0 +1,17 @@
+[access]
+address=10.25.1.63
+port=2262
+
+[credentials]
+user=root
+password=2iko.8gas
+
+[hardware]
+type=Cone
+power=0
+sn=CDC150440098
+
+[build]
+build=last
+firmware=4.1
+type=dev

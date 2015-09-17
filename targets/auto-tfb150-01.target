@@ -1,0 +1,17 @@
+[access]
+address=10.25.1.76
+port=15022
+
+[credentials]
+user=embedded
+password=2iko.8gas
+
+[hardware]
+type=TFB
+power=0
+sn=CDS1403020010
+
+[build]
+build=last
+firmware=4.2
+type=dev
