@@ -6,7 +6,7 @@ import csCommon as css
 import usCommon as usr
 import tbCommon as tfb
 import clCommon as clt
-from testbot import log, cfg
+from testbot import cfg
 
 class testSuite:
 

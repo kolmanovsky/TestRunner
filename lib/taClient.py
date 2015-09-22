@@ -9,7 +9,7 @@ import time
 from autobot import cfg
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('client-lib')
 
 class autoClient:
     'Common base class for all employees'
@@ -83,56 +83,52 @@ class autoClient:
 
     def getClientInfo(self):
         """
-        Return account information for active user (e-mail and UUID)
+        Return account information for active user (e-mail and app version)
 
-        :return: Connected data user e-mail and uuid
+        :return: Connected data user e-mail and app version
         """
 
-        logger.info("Will get UUID for current user on '"+self.name+"'.")
+        logger.debug("Client '"+self.name+"' is running "+self.platform+".")
 
-        logger.debug("Get current local user name.")
+
         username = self.userName()
-
-        if username.lower() == 'error':
+        if username == 'Error':
             username = self.user
             logger.warning("Cannot get current user name. Will use one from config file: '"+username+"'.")
         else:
-            logger.debug("Will use: '"+username+"'.")
+            logger.debug("Current user on '"+self.name+"' has login '"+username+"'.")
 
         try:
             conn = rpyc.classic.connect(self.publ)
-            logger.debug("Successfully connected to RPYC running on '"+self.name+"' over corporate IP '"+self.publ+"'.")
+            logger.debug("Successfully connected to RPYC running on '"+self.name+"' over IP '"+self.publ+"'.")
         except:
             logger.error("Cannot connect to RPYC on remote computer (IP="+self.publ+".")
             return 'Error'
 
-        if self.platform == 'WIN':
-            file_name = 'C:\\Users\\'+username+'\\AppData\\Roaming\\Connected Data\\configuration.ini'
-            rmt_cfg = conn.modules.ConfigParser.RawConfigParser()
-            rmt_cfg.read(file_name)
-            cd_account = rmt_cfg.get('Credentials','UserName')
-            cd_uuid = rmt_cfg.get('Credentials','UUID')
-            #cd_mail = rmt_cfg.get('Credentials','AccountName')
-            cd_clientver = rmt_cfg.get('Options','LastRunVersion')
-        else:
-            file_name = '/Users/'+username+'/Library/Preferences/com.connecteddata.ConnectedDesktop.plist'
-            rmt_cfg = conn.modules.biplist.readPlist(file_name)
-            cd_account = rmt_cfg['Account']
-            cd_uuid = rmt_cfg['AppUUID']
-            info_cfg = conn.modules.biplist.readPlist('/Applications/Transporter Desktop.app/Contents/Info.plist')
-            cd_clientver = info_cfg['CFBundleShortVersionString']
+        try:
+            if self.platform == 'WIN':
+                file_name = 'C:\\Users\\'+username+'\\AppData\\Roaming\\Connected Data\\configuration.ini'
+                rmt_cfg = conn.modules.ConfigParser.RawConfigParser()
+                rmt_cfg.read(file_name)
+                cd_account = rmt_cfg.get('Credentials','UserName')
+                cd_clientver = rmt_cfg.get('Options','LastRunVersion')
+            else:
+                file_name = '/Users/'+username+'/Library/Preferences/com.connecteddata.ConnectedDesktop.plist'
+                rmt_cfg = conn.modules.biplist.readPlist(file_name)
+                cd_account = rmt_cfg['Account']
+                info_cfg = conn.modules.biplist.readPlist('/Applications/Transporter Desktop.app/Contents/Info.plist')
+                cd_clientver = info_cfg['CFBundleShortVersionString']
+        except:
+            logger.error("Failed to get information from client's desktop application.")
+            return 'Error'
 
-        logger.debug("Got Connected data account from '"+file_name+"'.")
+        logger.debug("Client's desktop information was retrived from local file '"+file_name+"'.")
 
-        return cd_account, cd_uuid, cd_clientver
+        return cd_account, cd_clientver
 
     def checkClient(self):
 
         logger.debug("Check availability of client '"+self.name+"'.")
-
-        import taBackend as cs
-
-        test_cs = cs.autoCS()
 
         # Check platphorm
         platform = self.getOS()
@@ -141,10 +137,9 @@ class autoClient:
             return 'Error'
 
         # Check data for currently logged user
+        usermail, userver = self.getClientInfo()
 
-        usermail, userid, userver = self.getClientInfo()
-
-        if usermail.lower() == 'error':
+        if usermail == 'Error':
             logger.warning("Unable to retrive information for current user on '"+self.name+"'.")
             return 'Error'
 
@@ -152,16 +147,10 @@ class autoClient:
             logger.error("Wrong user name ('"+usermail+"' instead of '"+self.tusr+"'.")
             return 'Error'
 
-        account = usermail.split('@')[0]
-        uuid = test_cs.csGetCustomerID(account)
-        if userid != uuid:
-            logger.error("Wrong UUID for customer '"+account+"'. CS responde '"+uuid+"' instead of expected '"+userid+"'.")
-            return 'Error'
-
         logger.info("Client will use desk app version '"+userver+"'.")
 
         response = self.smbUmountAll()
-        if response.lower() == 'error':
+        if response == 'Error':
             logger.warning("Probably there are still mounted network storages on '"+self.name+"'.")
 
         return platform
@@ -265,7 +254,7 @@ class autoClient:
         status = 'Success'
         for mount in mountpoints:
             response = self.smbUmount(mount)
-            if response.lower() == 'error':
+            if response == 'Error':
                 logger.warning("Failed to remove network file system mounted as '"+mount+"' on '"+self.name+"'.")
                 status = 'Error'
 
@@ -428,8 +417,6 @@ class autoClient:
 
         conn = rpyc.classic.connect(self.publ)
 
-        logger.debug("Will copy '"+src+"' to '"+dst+"'.")
-
         try:
             normsrc = conn.modules.os.path.normcase(src)
             normdst = conn.modules.os.path.normcase(dst)
@@ -439,23 +426,12 @@ class autoClient:
 
         logger.debug("Client platform is "+self.platform+". Will copy from "+normsrc+" to "+normdst+".")
 
-        logger.debug("First of all: will delete destination folder if it already exists.")
 
-        result = self.delTree(normdst)
-        if result == 'Error':
-            logger.warning("Fail to delete destination. Will try to copy anyway.")
-
-        if conn.modules.os.path.exists(normdst):
-            try:
-                if conn.modules.os.path.isdir(normdst):
-                    logger.warning(normdst.capitalize()+" already exists on '"+self.name+"'.")
-                    conn.modules.shutil.rmtree(normdst)
-                elif conn.modules.os.path.isfile(normdst):
-                    logger.warning(normdst.capitalize()+" already exists on '"+self.name+"' and it is a file.")
-                    conn.modules.os.unlink(normdst)
-            except:
-                logger.warning(normdst.capitalize()+" already exists on '"+self.name+"' and it is impossible to delete it.")
-                return 'Error'
+        if conn.modules.os.path.isdir(normdst):
+            logger.debug("'"+normdst+" already exists. Will delete it.")
+            result = self.delTree(normdst)
+            if result == 'Error':
+                logger.warning("Fail to delete '"+normdst+"'. Will try to copy anyway.")
 
         try:
             treestat = conn.modules.shutil.copytree(normsrc,normdst,symlinks=False,ignore=None)
@@ -476,23 +452,11 @@ class autoClient:
 
         conn = rpyc.classic.connect(self.publ)
 
-        normdir = conn.modules.os.path.normcase(dirname)
-        if conn.modules.os.path.isdir(normdir):
-            logger.debug(normdir+" exists. Deleting "+normdir)
-            try:
-                conn.modules.shutil.rmtree(normdir,True)
-            except conn.modules.shutil.Error as e:
-                logger.error("Directory "+normdir+" was not deleted. Error: %s" % e)
-                return 'Error'
-        elif conn.modules.os.path.isfile(normdir):
-            logger.debug(normdir+" is file. Deleting "+normdir)
-            try:
-                conn.modules.os.unlink(normdir)
-            except conn.modules.shutil.Error as e:
-                logger.error("Directory "+normdir+" was not deleted. Error: %s" % e)
-                return 'Error'
-        else:
-            logger.debug(normdir+" does not exist.")
+        try:
+            conn.modules.shutil.rmtree(dirname,True)
+        except conn.modules.shutil.Error as e:
+            logger.error("Directory "+dirname+" was not deleted. Error: %s" % e)
+            return 'Error'
 
         return 'Success'
 
@@ -503,7 +467,7 @@ class autoClient:
         logger.debug("Disconnect all attached storages if any.")
         for x in range (1,6):
             response = self.smbUmountAll()
-            if response.lower() == 'error':
+            if response == 'Error':
                 logger.warning("Unable to disconnect all storages on "+str(x)+" attempt.")
                 time.sleep(self.timeout)
             else:
@@ -515,14 +479,14 @@ class autoClient:
         logger.debug("Delete everything from Transporter directory.")
         for x in range (1,6):
             response = self.deleteAll()
-            if response.lower() == 'error':
+            if response == 'Error':
                 logger.warning("Unable to delete files/folders from Transporter directory on "+str(x)+" attempt.")
                 time.sleep(self.timeout)
             else:
                 logger.debug("Everything should be already removed from Transporter directory.")
                 break
 
-        if status.lower() == 'error':
+        if status == 'Error':
             return status
         else:
             return response

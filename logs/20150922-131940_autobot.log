@@ -1,0 +1,673 @@
+09-22-2015 13:19:40 autobot      INFO     ============================================================================================
+09-22-2015 13:19:40 autobot      INFO     Test execution starts 22-Sep-2015 at 13:19:40 PDT
+09-22-2015 13:19:40 autobot      INFO     Test execution based on autobot.cfg file.
+09-22-2015 13:19:40 autobot      INFO     ============================================================================================
+09-22-2015 13:19:40 autobot      INFO     Getting TestRail configuration.
+09-22-2015 13:19:40 autobot      DEBUG    Will use TestRail at 'http://172.24.1.33/testrail' using 'qa-auto@connecteddata.com/automatethis'.
+09-22-2015 13:19:40 autobot      INFO     Creating connection to the TestRail.
+09-22-2015 13:19:41 autobot      INFO     ===> Test suite 'S360: AUTO: Graceful shutdown'.
+09-22-2015 13:19:41 autobot      INFO     Starts at 22-Sep-2015 at 13:19:41 PDT
+09-22-2015 13:19:41 autobot      INFO     Test suite 'S360 - AUTO: Graceful shutdown' has 1 test case.
+09-22-2015 13:19:41 testbed      DEBUG    Will read information from config file 'S360.cfg'.
+09-22-2015 13:19:41 testbed      INFO     Check availability of all testbed components.
+09-22-2015 13:19:41 testbed      DEBUG    Getting testbed configuration.
+09-22-2015 13:19:41 testbed      DEBUG    Will read list of targets.
+09-22-2015 13:19:41 testbed      DEBUG    Found 2 targets.
+09-22-2015 13:19:41 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 13:19:41 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-22-2015 13:19:41 testbed      DEBUG    Will read list of clients.
+09-22-2015 13:19:41 testbed      DEBUG    Found 1 client.
+09-22-2015 13:19:41 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 13:19:41 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-22-2015 13:19:41 testbed      DEBUG    Will read list of users.
+09-22-2015 13:19:41 testbed      DEBUG    Found 2 users.
+09-22-2015 13:19:41 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 13:19:41 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-22-2015 13:19:41 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 13:19:41 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:19:41 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:19:41 client-lib   DEBUG    Check availability of client 'win7x64-01'.
+09-22-2015 13:19:41 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:19:41 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:19:41 client-lib   DEBUG    Client 'win7x64-01' is running WIN.
+09-22-2015 13:19:41 client-lib   INFO     Check user name currently logged on 'win7x64-01'.
+09-22-2015 13:19:42 client-lib   DEBUG    Current user on 'win7x64-01' has login 'automation'.
+09-22-2015 13:19:42 client-lib   DEBUG    Successfully connected to RPYC running on 'win7x64-01' over IP '172.18.34.169'.
+09-22-2015 13:19:42 client-lib   DEBUG    Client's desktop information was retrived from local file 'C:\Users\automation\AppData\Roaming\Connected Data\configuration.ini'.
+09-22-2015 13:19:42 client-lib   INFO     Client will use desk app version '4.1.2.19872'.
+09-22-2015 13:19:42 client-lib   INFO     Check and remove all network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:19:42 client-lib   INFO     Checking for network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:19:42 client-lib   DEBUG    Client 'win7x64-01' doesn't have any network file systems attached.
+09-22-2015 13:19:42 testbed      DEBUG    Client 'win7x64-01' is available for test execution. It runs WIN.
+09-22-2015 13:19:42 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:19:42 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:19:42 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:19:42 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:19:42 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:43 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:19:45 tfb-lib      DEBUG    Got process ID for replicator: 16060.
+09-22-2015 13:19:45 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:45 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:19:46 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:19:46 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:19:46 testbed      ERROR    Target 'auto-tfb30-01' is not ready for test execution.
+09-22-2015 13:19:46 autobot      ERROR    Testbed is not ready for execution tests from 'S360: AUTO: Graceful shutdown'.
+09-22-2015 13:19:46 testbed      INFO     Attempt to bring testbed into default state.
+09-22-2015 13:19:46 testbed      DEBUG    Getting testbed configuration.
+09-22-2015 13:19:46 testbed      DEBUG    Will read list of targets.
+09-22-2015 13:19:46 testbed      DEBUG    Found 2 targets.
+09-22-2015 13:19:46 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 13:19:46 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-22-2015 13:19:46 testbed      DEBUG    Will read list of clients.
+09-22-2015 13:19:46 testbed      DEBUG    Found 1 client.
+09-22-2015 13:19:46 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 13:19:46 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-22-2015 13:19:46 testbed      DEBUG    Will read list of users.
+09-22-2015 13:19:46 testbed      DEBUG    Found 2 users.
+09-22-2015 13:19:46 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 13:19:46 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-22-2015 13:19:46 user-lib     DEBUG    Will read information from config file 'automation.cfg'.
+09-22-2015 13:19:47 user-lib     INFO     Will reset customer automation.
+09-22-2015 13:19:47 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:19:48 cs-lib       DEBUG    Get list of pools (pool ids) for user with id '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:19:48 user-lib     DEBUG    Will read information from config file 'auto-qa01.cfg'.
+09-22-2015 13:19:48 user-lib     INFO     Will reset customer auto1.org1.
+09-22-2015 13:19:48 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:19:49 cs-lib       DEBUG    Get list of pools (pool ids) for user with id '54c8041383b37d9136d465b9'.
+09-22-2015 13:19:49 cs-lib       DEBUG    Retrive information for the pool.
+09-22-2015 13:19:49 cs-lib       DEBUG    Sucessfully retrive ID of the pool owner.
+09-22-2015 13:19:49 cs-lib       DEBUG    Attempting to delete pool.
+09-22-2015 13:19:50 cs-lib       ERROR    Pool with ID '54c804136cad8ebdb259ae99' was not deleted. Error code is 500.
+09-22-2015 13:19:50 user-lib     WARNING  Unable to delete pool '39109586321340ABACE5AD908091BA0E' (pool id=54c804136cad8ebdb259ae99) assotiated with user 'auto1.org1'.
+09-22-2015 13:19:50 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 13:19:50 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:19:50 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:19:50 client-lib   INFO     Attempt to set client according to config file.
+09-22-2015 13:19:50 client-lib   DEBUG    Disconnect all attached storages if any.
+09-22-2015 13:19:50 client-lib   INFO     Check and remove all network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:19:50 client-lib   INFO     Checking for network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:19:50 client-lib   DEBUG    Client 'win7x64-01' doesn't have any network file systems attached.
+09-22-2015 13:19:50 client-lib   DEBUG    All attacheg network storages should be already disconnected.
+09-22-2015 13:19:50 client-lib   DEBUG    Delete everything from Transporter directory.
+09-22-2015 13:19:50 client-lib   DEBUG    Will delete everything in Transporter folder
+09-22-2015 13:19:51 client-lib   DEBUG    Deleting AUTO_S358.
+09-22-2015 13:19:51 client-lib   DEBUG    Will delete everything in AUTO_S358
+09-22-2015 13:19:51 client-lib   DEBUG    auto_s358 does not exist.
+09-22-2015 13:19:51 client-lib   DEBUG    Deleting desktop.ini.
+09-22-2015 13:19:51 client-lib   DEBUG    Will delete everything in desktop.ini
+09-22-2015 13:19:51 client-lib   DEBUG    desktop.ini does not exist.
+09-22-2015 13:19:51 client-lib   DEBUG    Will not delete Transporter Library because it is part of 'Transporter Library'.
+09-22-2015 13:19:51 client-lib   DEBUG    Everything should be already removed from Transporter directory.
+09-22-2015 13:19:51 testbed      INFO     Client 'win7x64-01' was successfully reset.
+09-22-2015 13:19:51 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:19:51 tfb-lib      INFO     Attempt to bring TFB 'auto-tfb30-01' to default state.
+09-22-2015 13:19:51 tfb-lib      DEBUG    Will wait for TFB 'auto-tfb30-01' to start SSH deamon.
+09-22-2015 13:19:51 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:51 tfb-lib      DEBUG    Executing command 'hostname' on remote host.
+09-22-2015 13:19:53 tfb-lib      DEBUG    Device accessable over SSH. Response was tfb
+
+09-22-2015 13:19:53 tfb-lib      DEBUG    Will wait for TFB 'auto-tfb30-01' to start replicator.
+09-22-2015 13:19:53 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:19:53 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:53 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:19:54 tfb-lib      DEBUG    Replicator process is running. Process ID is 16060
+09-22-2015 13:19:54 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:19:54 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:19:54 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:19:54 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:54 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:19:55 tfb-lib      DEBUG    Got process ID for replicator: 16060.
+09-22-2015 13:19:55 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:56 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:19:57 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:19:57 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:19:57 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:19:57 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:19:57 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:57 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:19:58 tfb-lib      DEBUG    Got process ID for replicator: 16060.
+09-22-2015 13:19:58 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:19:58 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:19:59 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:19:59 tfb-lib      DEBUG    Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e9'.
+09-22-2015 13:19:59 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:20:00 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:20:00 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:20:00 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:20:01 tfb-lib      DEBUG    Got process ID for replicator: 16060.
+09-22-2015 13:20:01 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:20:01 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:20:02 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:20:02 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:20:02 cs-lib       DEBUG    Attempting to reset device
+09-22-2015 13:20:03 cs-lib       DEBUG    Device with ID '5490a7b0a01f46b8350000e9' was successfully reset.
+09-22-2015 13:20:03 tfb-lib      DEBUG    Archiving and storing replicator logs.
+09-22-2015 13:20:03 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:20:04 tfb-lib      DEBUG    Executing command 'tar -zcvf 2015Sep22-132003_replicator_logs_from_TFB_auto-tfb30-01.tar.gz /replicator/logs' on remote host.
+09-22-2015 13:20:05 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:20:05 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:20:16 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 60 seconds.
+09-22-2015 13:22:16 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:22:16 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:24:20 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 60 seconds.
+09-22-2015 13:27:20 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:27:20 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:27:20 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:27:20 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:27:21 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:27:22 tfb-lib      WARNING  Process ID for replicator returns empty string.
+09-22-2015 13:27:22 tfb-lib      WARNING  Replicator is down. Will try to start it.
+09-22-2015 13:27:22 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:27:22 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator start' on remote host.
+09-22-2015 13:27:23 tfb-lib      DEBUG    Replicator process is going to start on TFB 'auto-tfb30-01'. Waiting 60 seconds.
+09-22-2015 13:29:23 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:29:23 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:29:24 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:29:25 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:29:25 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:29:25 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:29:26 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:29:26 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:29:26 tfb-lib      DEBUG    TFB 'auto-tfb30-01' was successfully reset with CS call.
+09-22-2015 13:30:26 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:30:26 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:30:26 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:30:26 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:30:26 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:30:27 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:30:27 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:30:28 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Device 'auto-tfb30-01' is in default state.
+09-22-2015 13:30:29 testbed      INFO     Target 'auto-tfb30-01' was successfully reset.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:30:29 tfb-lib      INFO     Attempt to bring TFB 'auto-tfb15-01' to default state.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Will wait for TFB 'auto-tfb15-01' to start SSH deamon.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:29 tfb-lib      DEBUG    Executing command 'hostname' on remote host.
+09-22-2015 13:30:31 tfb-lib      DEBUG    Device accessable over SSH. Response was tfb
+
+09-22-2015 13:30:31 tfb-lib      DEBUG    Will wait for TFB 'auto-tfb15-01' to start replicator.
+09-22-2015 13:30:31 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:30:31 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:31 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:30:32 tfb-lib      DEBUG    Replicator process is running. Process ID is 21484
+09-22-2015 13:30:32 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:30:32 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:30:32 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:30:32 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:32 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:30:33 tfb-lib      DEBUG    Got process ID for replicator: 21484.
+09-22-2015 13:30:33 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:33 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:30:34 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:30:34 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:30:34 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:30:34 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:30:34 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:34 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Got process ID for replicator: 21484.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e2'.
+09-22-2015 13:30:35 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:30:35 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:36 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:30:36 tfb-lib      DEBUG    Got process ID for replicator: 21484.
+09-22-2015 13:30:36 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:37 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:30:37 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:30:37 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:30:37 cs-lib       DEBUG    Attempting to reset device
+09-22-2015 13:30:39 cs-lib       DEBUG    Device with ID '5490a7b0a01f46b8350000e2' was successfully reset.
+09-22-2015 13:30:39 tfb-lib      DEBUG    Archiving and storing replicator logs.
+09-22-2015 13:30:39 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:39 tfb-lib      DEBUG    Executing command 'tar -zcvf 2015Sep22-133039_replicator_logs_from_TFB_auto-tfb15-01.tar.gz /replicator/logs' on remote host.
+09-22-2015 13:30:40 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:30:40 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:30:47 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb15-01'. Waiting 60 seconds.
+09-22-2015 13:32:47 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:32:47 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:34:51 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb15-01'. Waiting 60 seconds.
+09-22-2015 13:37:51 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:37:51 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:37:51 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:37:51 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:37:51 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:37:51 tfb-lib      WARNING  Process ID for replicator returns empty string.
+09-22-2015 13:37:51 tfb-lib      WARNING  Replicator is down. Will try to start it.
+09-22-2015 13:37:51 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:37:52 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator start' on remote host.
+09-22-2015 13:37:52 tfb-lib      DEBUG    Replicator process is going to start on TFB 'auto-tfb15-01'. Waiting 60 seconds.
+09-22-2015 13:39:52 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:39:52 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:39:53 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:39:53 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:39:53 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:39:54 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:39:54 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:39:54 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:39:54 tfb-lib      DEBUG    TFB 'auto-tfb15-01' was successfully reset with CS call.
+09-22-2015 13:40:54 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:40:54 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:40:54 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:40:54 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:40:54 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:40:55 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:40:55 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:40:55 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:40:56 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:40:56 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:40:56 tfb-lib      DEBUG    Device 'auto-tfb15-01' is in default state.
+09-22-2015 13:40:56 testbed      INFO     Target 'auto-tfb15-01' was successfully reset.
+09-22-2015 13:41:56 testbed      INFO     Check availability of all testbed components.
+09-22-2015 13:41:56 testbed      DEBUG    Getting testbed configuration.
+09-22-2015 13:41:56 testbed      DEBUG    Will read list of targets.
+09-22-2015 13:41:56 testbed      DEBUG    Found 2 targets.
+09-22-2015 13:41:56 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 13:41:56 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-22-2015 13:41:56 testbed      DEBUG    Will read list of clients.
+09-22-2015 13:41:56 testbed      DEBUG    Found 1 client.
+09-22-2015 13:41:56 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 13:41:56 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-22-2015 13:41:56 testbed      DEBUG    Will read list of users.
+09-22-2015 13:41:56 testbed      DEBUG    Found 2 users.
+09-22-2015 13:41:56 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 13:41:56 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-22-2015 13:41:56 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 13:41:56 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:41:56 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:41:56 client-lib   DEBUG    Check availability of client 'win7x64-01'.
+09-22-2015 13:41:56 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:41:56 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:41:56 client-lib   DEBUG    Client 'win7x64-01' is running WIN.
+09-22-2015 13:41:56 client-lib   INFO     Check user name currently logged on 'win7x64-01'.
+09-22-2015 13:41:57 client-lib   DEBUG    Current user on 'win7x64-01' has login 'automation'.
+09-22-2015 13:41:57 client-lib   DEBUG    Successfully connected to RPYC running on 'win7x64-01' over IP '172.18.34.169'.
+09-22-2015 13:41:57 client-lib   DEBUG    Client's desktop information was retrived from local file 'C:\Users\automation\AppData\Roaming\Connected Data\configuration.ini'.
+09-22-2015 13:41:57 client-lib   INFO     Client will use desk app version '4.1.2.19872'.
+09-22-2015 13:41:57 client-lib   INFO     Check and remove all network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:41:57 client-lib   INFO     Checking for network file systems attached to the client 'win7x64-01'.
+09-22-2015 13:41:58 client-lib   DEBUG    Client 'win7x64-01' doesn't have any network file systems attached.
+09-22-2015 13:41:58 testbed      DEBUG    Client 'win7x64-01' is available for test execution. It runs WIN.
+09-22-2015 13:41:58 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:41:58 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:41:58 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:41:58 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:41:58 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:41:58 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:41:59 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:41:59 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:41:59 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:42:00 testbed      DEBUG    Target 'auto-tfb30-01' passed pre-fly check. It is unclaimed.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:42:00 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:42:00 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:01 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:01 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:42:01 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:01 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:02 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:02 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:42:02 testbed      DEBUG    Target 'auto-tfb15-01' passed pre-fly check. It is unclaimed.
+09-22-2015 13:42:02 user-lib     DEBUG    Will read information from config file 'automation.cfg'.
+09-22-2015 13:42:02 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:42:03 testbed      DEBUG    User 'automation' passed pre-fly check. Has CID 54c7b9b883b37d1421d465b9.
+09-22-2015 13:42:03 user-lib     DEBUG    Will read information from config file 'auto-qa01.cfg'.
+09-22-2015 13:42:03 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:42:04 testbed      DEBUG    User 'auto-qa01' passed pre-fly check. Has CID 54c8041383b37d9136d465b9.
+09-22-2015 13:42:04 autobot      INFO     Testbed is ready for execution tests from 'S360: AUTO: Graceful shutdown'.
+09-22-2015 13:42:04 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:42:04 tfb-lib      DEBUG    Configuration requires to install latest build.
+09-22-2015 13:42:04 tfb-lib      DEBUG    Will search for latest build for '4.2.x' version.
+09-22-2015 13:42:04 tfb-lib      DEBUG    Working with build from BuildBot.
+09-22-2015 13:42:04 tfb-lib      DEBUG    Delete old version of temporary file.
+09-22-2015 13:42:09 tfb-lib      DEBUG    Build path is: http://172.24.12.10/builds/data/buildbot/945/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+09-22-2015 13:42:09 tfb-lib      DEBUG    Will compare FW version on device versus build version.
+09-22-2015 13:42:09 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:09 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:42:09 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:09 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:10 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:42:10 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:11 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:12 tfb-lib      DEBUG    FW version from 'diag config' retrived as '4.2.0 (19881) '.
+09-22-2015 13:42:12 tfb-lib      INFO     Build has same version as FW installed on TFB 'auto-tfb30-01'. Will skip installation.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Configuration requires to install latest build.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Will search for latest build for '4.2.x' version.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Working with build from BuildBot.
+09-22-2015 13:42:12 tfb-lib      DEBUG    Delete old version of temporary file.
+09-22-2015 13:42:17 tfb-lib      DEBUG    Build path is: http://172.24.12.10/builds/data/buildbot/945/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+09-22-2015 13:42:17 tfb-lib      DEBUG    Will compare FW version on device versus build version.
+09-22-2015 13:42:17 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:17 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:42:17 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:17 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:18 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:42:18 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:18 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:19 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:19 tfb-lib      DEBUG    FW version from 'diag config' retrived as '4.2.0 (19881) '.
+09-22-2015 13:42:19 tfb-lib      INFO     Build has same version as FW installed on TFB 'auto-tfb15-01'. Will skip installation.
+09-22-2015 13:42:19 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:42:19 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:19 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:42:19 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:19 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:20 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:42:20 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:20 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:21 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:21 tfb-lib      DEBUG    FW version from 'diag config' retrived as '4.2.0 (19881) '.
+09-22-2015 13:42:21 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:42:21 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:21 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:42:21 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:21 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:22 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:42:22 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:42:22 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:23 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:23 tfb-lib      DEBUG    FW version from 'diag config' retrived as '4.2.0 (19881) '.
+09-22-2015 13:42:23 testbed      DEBUG    All transporters are running version '4.2.0 (19881) '.
+09-22-2015 13:42:23 autobot      INFO     ------>>
+09-22-2015 13:42:23 autobot      INFO     Going to execute test case 'C34209'.
+09-22-2015 13:42:23 S360         DEBUG    Start replicator after crash.
+09-22-2015 13:42:23 S360         INFO     Transporter will perform crash, then nothing and then check start-up scan.
+09-22-2015 13:42:23 S360         DEBUG    Getting list of devices and users.
+09-22-2015 13:42:23 testbed      DEBUG    Will read list of targets.
+09-22-2015 13:42:23 testbed      DEBUG    Found 2 targets.
+09-22-2015 13:42:23 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 13:42:23 testbed      DEBUG    Will read list of users.
+09-22-2015 13:42:23 testbed      DEBUG    Found 2 users.
+09-22-2015 13:42:23 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 13:42:23 testbed      DEBUG    Will read list of clients.
+09-22-2015 13:42:23 testbed      DEBUG    Found 1 client.
+09-22-2015 13:42:23 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 13:42:23 S360         DEBUG    Got URL to send requests to CS - https://dws.connecteddata.com:8078.
+09-22-2015 13:42:23 user-lib     DEBUG    Will read information from config file 'automation.cfg'.
+09-22-2015 13:42:23 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:42:23 S360         DEBUG    Got customer ID (54c7b9b883b37d1421d465b9) for org admin (automation).
+09-22-2015 13:42:23 user-lib     DEBUG    Will read information from config file 'auto-qa01.cfg'.
+09-22-2015 13:42:23 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 13:42:24 S360         DEBUG    Got customer ID (54c8041383b37d9136d465b9) for regular user (auto-qa01).
+09-22-2015 13:42:24 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:42:24 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:42:24 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:24 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:42:24 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:24 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:25 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:42:25 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:25 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:26 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:26 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:42:26 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:42:26 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:42:26 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:27 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:42:28 tfb-lib      DEBUG    Got process ID for replicator: 22977.
+09-22-2015 13:42:28 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:28 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:42:29 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:42:29 tfb-lib      DEBUG    Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e9'.
+09-22-2015 13:42:29 cs-lib       DEBUG    Attempting to claim device '5490a7b0a01f46b8350000e9' by user '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:42:30 cs-lib       DEBUG    Device with ID '5490a7b0a01f46b8350000e9' was successfully claimed.
+09-22-2015 13:42:30 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:42:31 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:42:36 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 60 seconds.
+09-22-2015 13:44:36 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb30-01'.
+09-22-2015 13:44:36 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:44:36 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+09-22-2015 13:44:36 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:44:36 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:44:38 tfb-lib      DEBUG    Got process ID for replicator: 25120.
+09-22-2015 13:44:38 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:44:38 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:44:39 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:44:39 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:44:39 tfb-lib      DEBUG    TFB 'auto-tfb30-01' was successfully claimed with CS call.
+09-22-2015 13:44:39 tfb-lib      DEBUG    Rename TFB.
+09-22-2015 13:44:39 cs-lib       DEBUG    Rename device to 'auto-tfb30-01'.
+09-22-2015 13:44:40 S360         DEBUG    TFB 'auto-tfb30-01' was successfully claimed.
+09-22-2015 13:44:40 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:44:40 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:44:40 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:44:40 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:44:40 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:44:41 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:44:41 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:44:41 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '000000000000000000000000'.
+09-22-2015 13:44:42 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:44:42 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:44:43 tfb-lib      DEBUG    Got process ID for replicator: 28792.
+09-22-2015 13:44:43 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:44:43 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:44:44 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:44:44 tfb-lib      DEBUG    Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e2'.
+09-22-2015 13:44:44 cs-lib       DEBUG    Attempting to claim device '5490a7b0a01f46b8350000e2' by user '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:44:45 cs-lib       DEBUG    Device with ID '5490a7b0a01f46b8350000e2' was successfully claimed.
+09-22-2015 13:44:45 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:44:45 tfb-lib      DEBUG    Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+09-22-2015 13:44:50 tfb-lib      DEBUG    Replicator process is going to restart on TFB 'auto-tfb15-01'. Waiting 60 seconds.
+09-22-2015 13:46:50 tfb-lib      DEBUG    Validate availability of TFB 'auto-tfb15-01'.
+09-22-2015 13:46:50 tfb-lib      DEBUG    First of all check is replicator running.
+09-22-2015 13:46:50 tfb-lib      DEBUG    Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+09-22-2015 13:46:50 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:46:50 tfb-lib      DEBUG    Executing command 'pidof replicator' on remote host.
+09-22-2015 13:46:51 tfb-lib      DEBUG    Got process ID for replicator: 30158.
+09-22-2015 13:46:51 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:46:51 tfb-lib      DEBUG    Executing command 'cmd diag config' on remote host.
+09-22-2015 13:46:52 tfb-lib      DEBUG    Got expected result from command 'cmd diag config'.
+09-22-2015 13:46:52 tfb-lib      DEBUG    Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+09-22-2015 13:46:52 tfb-lib      DEBUG    TFB 'auto-tfb15-01' was successfully claimed with CS call.
+09-22-2015 13:46:52 tfb-lib      DEBUG    Rename TFB.
+09-22-2015 13:46:52 cs-lib       DEBUG    Rename device to 'auto-tfb15-01'.
+09-22-2015 13:46:53 S360         DEBUG    TFB 'auto-tfb15-01' was claimed.
+09-22-2015 13:46:53 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 13:46:53 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 13:46:53 client-lib   DEBUG    Computer 'win7x64-01' (IP address 172.18.34.169) is running Windows.
+09-22-2015 13:46:53 cs-lib       DEBUG    Will create pool 'AUTO_S360-01'.
+09-22-2015 13:46:53 cs-lib       DEBUG    Attempting to create pool.
+09-22-2015 13:46:53 cs-lib       DEBUG    No NAS object provided, will create pool 'AUTO_S360-01' type 'MW'.
+09-22-2015 13:46:54 cs-lib       DEBUG    Pool 'AUTO_S360-01' was successfully created.
+09-22-2015 13:46:54 cs-lib       DEBUG    Pool 'AUTO_S360-01' successfully created. Pool ID is '5601be3d62f16b71307b23c6'.
+09-22-2015 13:46:54 cs-lib       DEBUG    Attempt to send invitation to the pool.
+09-22-2015 13:46:54 cs-lib       DEBUG    Invitation was successfully send.
+09-22-2015 13:46:54 cs-lib       DEBUG    Invitation '5601be3eb7d99aea7c0b3993' for pool 'AUTO_S360-01' was send to the used with ID '54c8041383b37d9136d465b9'.
+09-22-2015 13:46:54 cs-lib       DEBUG    Attempt to reply to the pool invitation.
+09-22-2015 13:46:54 cs-lib       DEBUG    Will accept invitation.
+09-22-2015 13:46:55 cs-lib       DEBUG    Successfully replyed to the invitation.
+09-22-2015 13:46:55 cs-lib       DEBUG    Invitation was successfully accepted.
+09-22-2015 13:46:55 S360         DEBUG    Pool 'AUTO_S360-01' was successfully setup. It has ID '5601be3d62f16b71307b23c6'.
+09-22-2015 13:46:55 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:46:55 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601be3d62f16b71307b23c6
+09-22-2015 13:46:55 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:46:55 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:46:56 tfb-lib      WARNING  Cannot find pool with ID '5601be3d62f16b71307b23c6' on TFB 'auto-tfb30-01'. Will wait 60 seconds.
+09-22-2015 13:47:56 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:47:57 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:47:58 tfb-lib      DEBUG    Found pool with ID '5601be3d62f16b71307b23c6' on TFB 'auto-tfb30-01'.
+09-22-2015 13:47:58 tfb-lib      DEBUG    It took less than 120 to create pool '5601be3d62f16b71307b23c6 on TFB 'auto-tfb30-01'.
+09-22-2015 13:47:58 tfb-lib      DEBUG    Pool with ID '5601be3d62f16b71307b23c6' created with actual name 'AUTO_S360-01'.
+09-22-2015 13:47:58 S360         DEBUG    Pool AUTO_S360-01'was created on TFB 'auto-tfb30-01'.
+09-22-2015 13:47:58 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:47:58 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601be3d62f16b71307b23c6
+09-22-2015 13:47:58 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:47:58 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:47:59 tfb-lib      DEBUG    Found pool with ID '5601be3d62f16b71307b23c6' on TFB 'auto-tfb15-01'.
+09-22-2015 13:47:59 tfb-lib      DEBUG    It took less than 60 to create pool '5601be3d62f16b71307b23c6 on TFB 'auto-tfb15-01'.
+09-22-2015 13:47:59 tfb-lib      DEBUG    Pool with ID '5601be3d62f16b71307b23c6' created with actual name 'AUTO_S360-01'.
+09-22-2015 13:47:59 S360         DEBUG    Pool AUTO_S360-01'was created on TFB 'auto-tfb15-01'.
+09-22-2015 13:47:59 S360         DEBUG    Waiting for pool 'AUTO_S360-01' to get populated on client 'win7x64-01'.
+09-22-2015 13:47:59 client-lib   DEBUG    Check if 'AUTO_S360-01' exists and it is directory.
+09-22-2015 13:47:59 client-lib   DEBUG    Pool's directory path will be 'C:\Users\automation\Transporter\AUTO_S360-01'.
+09-22-2015 13:47:59 S360         DEBUG    Pool 'AUTO_S360-01' directory was populated on the client 'win7x64-01'.
+09-22-2015 13:47:59 cs-lib       DEBUG    Will create pool 'AUTO_S360-02'.
+09-22-2015 13:47:59 cs-lib       DEBUG    Attempting to create pool.
+09-22-2015 13:47:59 cs-lib       DEBUG    No NAS object provided, will create pool 'AUTO_S360-02' type 'MW'.
+09-22-2015 13:48:01 cs-lib       DEBUG    Pool 'AUTO_S360-02' was successfully created.
+09-22-2015 13:48:01 cs-lib       DEBUG    Pool 'AUTO_S360-02' successfully created. Pool ID is '5601be8062f16bf52f7b23c6'.
+09-22-2015 13:48:01 cs-lib       DEBUG    Attempt to send invitation to the pool.
+09-22-2015 13:48:01 cs-lib       DEBUG    Invitation was successfully send.
+09-22-2015 13:48:01 cs-lib       DEBUG    Invitation '5601be81b7d99aea7c0b3994' for pool 'AUTO_S360-02' was send to the used with ID '54c8041383b37d9136d465b9'.
+09-22-2015 13:48:01 cs-lib       DEBUG    Attempt to reply to the pool invitation.
+09-22-2015 13:48:01 cs-lib       DEBUG    Will accept invitation.
+09-22-2015 13:48:02 cs-lib       DEBUG    Successfully replyed to the invitation.
+09-22-2015 13:48:02 cs-lib       DEBUG    Invitation was successfully accepted.
+09-22-2015 13:48:02 S360         DEBUG    Pool 'AUTO_S360-02' was successfully setup. It has ID '5601be8062f16bf52f7b23c6'.
+09-22-2015 13:48:02 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:48:02 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601be8062f16bf52f7b23c6
+09-22-2015 13:48:02 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:48:02 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:48:04 tfb-lib      WARNING  Cannot find pool with ID '5601be8062f16bf52f7b23c6' on TFB 'auto-tfb30-01'. Will wait 60 seconds.
+09-22-2015 13:49:04 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:49:06 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:49:08 tfb-lib      DEBUG    Found pool with ID '5601be8062f16bf52f7b23c6' on TFB 'auto-tfb30-01'.
+09-22-2015 13:49:08 tfb-lib      DEBUG    It took less than 120 to create pool '5601be8062f16bf52f7b23c6 on TFB 'auto-tfb30-01'.
+09-22-2015 13:49:08 tfb-lib      DEBUG    Pool with ID '5601be8062f16bf52f7b23c6' created with actual name 'AUTO_S360-02'.
+09-22-2015 13:49:08 S360         DEBUG    Pool AUTO_S360-02'was created on TFB 'auto-tfb30-01'.
+09-22-2015 13:49:08 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:49:08 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601be8062f16bf52f7b23c6
+09-22-2015 13:49:08 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:49:08 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:49:10 tfb-lib      DEBUG    Found pool with ID '5601be8062f16bf52f7b23c6' on TFB 'auto-tfb15-01'.
+09-22-2015 13:49:10 tfb-lib      DEBUG    It took less than 60 to create pool '5601be8062f16bf52f7b23c6 on TFB 'auto-tfb15-01'.
+09-22-2015 13:49:10 tfb-lib      DEBUG    Pool with ID '5601be8062f16bf52f7b23c6' created with actual name 'AUTO_S360-02'.
+09-22-2015 13:49:10 S360         DEBUG    Pool AUTO_S360-02'was created on TFB 'auto-tfb15-01'.
+09-22-2015 13:49:10 S360         DEBUG    Waiting for pool 'AUTO_S360-02' to get populated on client 'win7x64-01'.
+09-22-2015 13:49:10 client-lib   DEBUG    Check if 'AUTO_S360-02' exists and it is directory.
+09-22-2015 13:49:10 client-lib   DEBUG    Pool's directory path will be 'C:\Users\automation\Transporter\AUTO_S360-02'.
+09-22-2015 13:49:10 S360         DEBUG    Pool 'AUTO_S360-02' directory was populated on the client 'win7x64-01'.
+09-22-2015 13:49:10 cs-lib       DEBUG    Will create pool 'AUTO_S360-03'.
+09-22-2015 13:49:10 cs-lib       DEBUG    Attempting to create pool.
+09-22-2015 13:49:10 cs-lib       DEBUG    No NAS object provided, will create pool 'AUTO_S360-03' type 'MW'.
+09-22-2015 13:49:12 cs-lib       DEBUG    Pool 'AUTO_S360-03' was successfully created.
+09-22-2015 13:49:12 cs-lib       DEBUG    Pool 'AUTO_S360-03' successfully created. Pool ID is '5601bec762f16bb1307b23c6'.
+09-22-2015 13:49:12 cs-lib       DEBUG    Attempt to send invitation to the pool.
+09-22-2015 13:49:12 cs-lib       DEBUG    Invitation was successfully send.
+09-22-2015 13:49:12 cs-lib       DEBUG    Invitation '5601bec7b7d99aea7c0b3996' for pool 'AUTO_S360-03' was send to the used with ID '54c8041383b37d9136d465b9'.
+09-22-2015 13:49:12 cs-lib       DEBUG    Attempt to reply to the pool invitation.
+09-22-2015 13:49:12 cs-lib       DEBUG    Will accept invitation.
+09-22-2015 13:49:13 cs-lib       DEBUG    Successfully replyed to the invitation.
+09-22-2015 13:49:13 cs-lib       DEBUG    Invitation was successfully accepted.
+09-22-2015 13:49:13 S360         DEBUG    Pool 'AUTO_S360-03' was successfully setup. It has ID '5601bec762f16bb1307b23c6'.
+09-22-2015 13:49:13 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:49:13 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bec762f16bb1307b23c6
+09-22-2015 13:49:13 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:49:13 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:49:14 tfb-lib      WARNING  Cannot find pool with ID '5601bec762f16bb1307b23c6' on TFB 'auto-tfb30-01'. Will wait 60 seconds.
+09-22-2015 13:50:14 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:50:15 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:50:16 tfb-lib      DEBUG    Found pool with ID '5601bec762f16bb1307b23c6' on TFB 'auto-tfb30-01'.
+09-22-2015 13:50:16 tfb-lib      DEBUG    It took less than 120 to create pool '5601bec762f16bb1307b23c6 on TFB 'auto-tfb30-01'.
+09-22-2015 13:50:16 tfb-lib      DEBUG    Pool with ID '5601bec762f16bb1307b23c6' created with actual name 'AUTO_S360-03'.
+09-22-2015 13:50:16 S360         DEBUG    Pool AUTO_S360-03'was created on TFB 'auto-tfb30-01'.
+09-22-2015 13:50:16 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:50:16 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bec762f16bb1307b23c6
+09-22-2015 13:50:16 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:50:17 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:50:18 tfb-lib      DEBUG    Found pool with ID '5601bec762f16bb1307b23c6' on TFB 'auto-tfb15-01'.
+09-22-2015 13:50:18 tfb-lib      DEBUG    It took less than 60 to create pool '5601bec762f16bb1307b23c6 on TFB 'auto-tfb15-01'.
+09-22-2015 13:50:18 tfb-lib      DEBUG    Pool with ID '5601bec762f16bb1307b23c6' created with actual name 'AUTO_S360-03'.
+09-22-2015 13:50:18 S360         DEBUG    Pool AUTO_S360-03'was created on TFB 'auto-tfb15-01'.
+09-22-2015 13:50:18 S360         DEBUG    Waiting for pool 'AUTO_S360-03' to get populated on client 'win7x64-01'.
+09-22-2015 13:50:18 client-lib   DEBUG    Check if 'AUTO_S360-03' exists and it is directory.
+09-22-2015 13:50:18 client-lib   DEBUG    Pool's directory path will be 'C:\Users\automation\Transporter\AUTO_S360-03'.
+09-22-2015 13:50:19 S360         DEBUG    Pool 'AUTO_S360-03' directory was populated on the client 'win7x64-01'.
+09-22-2015 13:50:19 cs-lib       DEBUG    Will create pool 'AUTO_S360-04'.
+09-22-2015 13:50:19 cs-lib       DEBUG    Attempting to create pool.
+09-22-2015 13:50:19 cs-lib       DEBUG    No NAS object provided, will create pool 'AUTO_S360-04' type 'MW'.
+09-22-2015 13:50:20 cs-lib       DEBUG    Pool 'AUTO_S360-04' was successfully created.
+09-22-2015 13:50:20 cs-lib       DEBUG    Pool 'AUTO_S360-04' successfully created. Pool ID is '5601bf0c62f16bca307b23c6'.
+09-22-2015 13:50:20 cs-lib       DEBUG    Attempt to send invitation to the pool.
+09-22-2015 13:50:20 cs-lib       DEBUG    Invitation was successfully send.
+09-22-2015 13:50:20 cs-lib       DEBUG    Invitation '5601bf0cb7d99aea7c0b3997' for pool 'AUTO_S360-04' was send to the used with ID '54c8041383b37d9136d465b9'.
+09-22-2015 13:50:20 cs-lib       DEBUG    Attempt to reply to the pool invitation.
+09-22-2015 13:50:20 cs-lib       DEBUG    Will accept invitation.
+09-22-2015 13:50:21 cs-lib       DEBUG    Successfully replyed to the invitation.
+09-22-2015 13:50:21 cs-lib       DEBUG    Invitation was successfully accepted.
+09-22-2015 13:50:21 S360         DEBUG    Pool 'AUTO_S360-04' was successfully setup. It has ID '5601bf0c62f16bca307b23c6'.
+09-22-2015 13:50:21 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:50:21 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bf0c62f16bca307b23c6
+09-22-2015 13:50:21 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:50:21 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:50:23 tfb-lib      WARNING  Cannot find pool with ID '5601bf0c62f16bca307b23c6' on TFB 'auto-tfb30-01'. Will wait 60 seconds.
+09-22-2015 13:51:23 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:51:24 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:51:25 tfb-lib      DEBUG    Found pool with ID '5601bf0c62f16bca307b23c6' on TFB 'auto-tfb30-01'.
+09-22-2015 13:51:25 tfb-lib      DEBUG    It took less than 120 to create pool '5601bf0c62f16bca307b23c6 on TFB 'auto-tfb30-01'.
+09-22-2015 13:51:25 tfb-lib      DEBUG    Pool with ID '5601bf0c62f16bca307b23c6' created with actual name 'AUTO_S360-04'.
+09-22-2015 13:51:25 S360         DEBUG    Pool AUTO_S360-04'was created on TFB 'auto-tfb30-01'.
+09-22-2015 13:51:25 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:51:25 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bf0c62f16bca307b23c6
+09-22-2015 13:51:25 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:51:25 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:51:26 tfb-lib      DEBUG    Found pool with ID '5601bf0c62f16bca307b23c6' on TFB 'auto-tfb15-01'.
+09-22-2015 13:51:26 tfb-lib      DEBUG    It took less than 60 to create pool '5601bf0c62f16bca307b23c6 on TFB 'auto-tfb15-01'.
+09-22-2015 13:51:26 tfb-lib      DEBUG    Pool with ID '5601bf0c62f16bca307b23c6' created with actual name 'AUTO_S360-04'.
+09-22-2015 13:51:26 S360         DEBUG    Pool AUTO_S360-04'was created on TFB 'auto-tfb15-01'.
+09-22-2015 13:51:26 S360         DEBUG    Waiting for pool 'AUTO_S360-04' to get populated on client 'win7x64-01'.
+09-22-2015 13:51:26 client-lib   DEBUG    Check if 'AUTO_S360-04' exists and it is directory.
+09-22-2015 13:51:26 client-lib   DEBUG    Pool's directory path will be 'C:\Users\automation\Transporter\AUTO_S360-04'.
+09-22-2015 13:51:26 S360         DEBUG    Pool 'AUTO_S360-04' directory was populated on the client 'win7x64-01'.
+09-22-2015 13:51:26 cs-lib       DEBUG    Will create pool 'AUTO_S360-05'.
+09-22-2015 13:51:26 cs-lib       DEBUG    Attempting to create pool.
+09-22-2015 13:51:26 cs-lib       DEBUG    No NAS object provided, will create pool 'AUTO_S360-05' type 'MW'.
+09-22-2015 13:51:27 cs-lib       DEBUG    Pool 'AUTO_S360-05' was successfully created.
+09-22-2015 13:51:27 cs-lib       DEBUG    Pool 'AUTO_S360-05' successfully created. Pool ID is '5601bf4f62f16b15317b23c6'.
+09-22-2015 13:51:27 cs-lib       DEBUG    Attempt to send invitation to the pool.
+09-22-2015 13:51:28 cs-lib       DEBUG    Invitation was successfully send.
+09-22-2015 13:51:28 cs-lib       DEBUG    Invitation '5601bf4fb7d99aea7c0b3998' for pool 'AUTO_S360-05' was send to the used with ID '54c8041383b37d9136d465b9'.
+09-22-2015 13:51:28 cs-lib       DEBUG    Attempt to reply to the pool invitation.
+09-22-2015 13:51:28 cs-lib       DEBUG    Will accept invitation.
+09-22-2015 13:51:29 cs-lib       DEBUG    Successfully replyed to the invitation.
+09-22-2015 13:51:29 cs-lib       DEBUG    Invitation was successfully accepted.
+09-22-2015 13:51:29 S360         DEBUG    Pool 'AUTO_S360-05' was successfully setup. It has ID '5601bf4f62f16b15317b23c6'.
+09-22-2015 13:51:29 tfb-lib      DEBUG    Will read information from config file 'auto-tfb30-01.target'.
+09-22-2015 13:51:29 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bf4f62f16b15317b23c6
+09-22-2015 13:51:29 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:51:29 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:51:30 tfb-lib      WARNING  Cannot find pool with ID '5601bf4f62f16b15317b23c6' on TFB 'auto-tfb30-01'. Will wait 60 seconds.
+09-22-2015 13:52:30 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.63' over port 2294.
+09-22-2015 13:52:31 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:52:32 tfb-lib      DEBUG    Found pool with ID '5601bf4f62f16b15317b23c6' on TFB 'auto-tfb30-01'.
+09-22-2015 13:52:32 tfb-lib      DEBUG    It took less than 120 to create pool '5601bf4f62f16b15317b23c6 on TFB 'auto-tfb30-01'.
+09-22-2015 13:52:32 tfb-lib      DEBUG    Pool with ID '5601bf4f62f16b15317b23c6' created with actual name 'AUTO_S360-05'.
+09-22-2015 13:52:32 S360         DEBUG    Pool AUTO_S360-05'was created on TFB 'auto-tfb30-01'.
+09-22-2015 13:52:32 tfb-lib      DEBUG    Will read information from config file 'auto-tfb15-01.target'.
+09-22-2015 13:52:32 tfb-lib      DEBUG    Checking for actual pool name on device by pool ID, which is 5601bf4f62f16b15317b23c6
+09-22-2015 13:52:32 tfb-lib      DEBUG    Connecting with SSH to the host: '10.25.1.82' over port 2226.
+09-22-2015 13:52:33 tfb-lib      DEBUG    Executing command 'cmd pools|grep "Pool:"' on remote host.
+09-22-2015 13:52:34 tfb-lib      DEBUG    Found pool with ID '5601bf4f62f16b15317b23c6' on TFB 'auto-tfb15-01'.
+09-22-2015 13:52:34 tfb-lib      DEBUG    It took less than 60 to create pool '5601bf4f62f16b15317b23c6 on TFB 'auto-tfb15-01'.
+09-22-2015 13:52:34 tfb-lib      DEBUG    Pool with ID '5601bf4f62f16b15317b23c6' created with actual name 'AUTO_S360-05'.
+09-22-2015 13:52:34 S360         DEBUG    Pool AUTO_S360-05'was created on TFB 'auto-tfb15-01'.
+09-22-2015 13:52:34 S360         DEBUG    Waiting for pool 'AUTO_S360-05' to get populated on client 'win7x64-01'.
+09-22-2015 13:52:34 client-lib   DEBUG    Check if 'AUTO_S360-05' exists and it is directory.
+09-22-2015 13:52:34 client-lib   DEBUG    Pool's directory path will be 'C:\Users\automation\Transporter\AUTO_S360-05'.
+09-22-2015 13:52:34 S360         DEBUG    Pool 'AUTO_S360-05' directory was populated on the client 'win7x64-01'.
+09-22-2015 13:52:34 S360         DEBUG    Test case will use 5 pools.
+09-22-2015 13:52:34 client-lib   DEBUG    Will copy files from network storage to the pool directory.
+09-22-2015 13:52:34 client-lib   DEBUG    Mount shared folder.
+09-22-2015 13:52:34 client-lib   DEBUG    Will mount network share as z:-drive.
+09-22-2015 13:52:36 client-lib   DEBUG    Network storage mounted as 'z:'.
+09-22-2015 13:52:36 client-lib   DEBUG    Will copy 'z:/vault' to 'C:\Users\automation\Transporter\AUTO_S360-01/vault'.
+09-22-2015 13:52:36 client-lib   DEBUG    Client platform is WIN. Will copy from z:\vault to c:\users\automation\transporter\auto_s360-01\vault.
+09-22-2015 13:52:36 client-lib   DEBUG    First of all: will delete destination folder if it already exists.
+09-22-2015 13:52:36 client-lib   DEBUG    Will delete everything in c:\users\automation\transporter\auto_s360-01\vault
+09-22-2015 13:52:37 client-lib   DEBUG    c:\users\automation\transporter\auto_s360-01\vault does not exist.

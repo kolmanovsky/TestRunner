@@ -1,0 +1,111 @@
+2015-09-10 13:47:12,443: INFO    : ============================================================================================
+2015-09-10 13:47:12,444: INFO    : Test execution starts 10-Sep-2015 at 13:47:12 PDT
+2015-09-10 13:47:12,444: INFO    : Test execution based on testbot.cfg file.
+2015-09-10 13:47:12,444: INFO    : ============================================================================================
+2015-09-10 13:47:12,457: INFO    : ------- Test suite -------
+2015-09-10 13:47:12,457: INFO    : 'S358: AUTO: Initial play' starts 10-Sep-2015 at 13:47:12 PDT
+2015-09-10 13:47:12,458: INFO    : Test suite 'S358 - AUTO: Initial play' has 8 test cases.
+2015-09-10 13:47:12,458: DEBUG   : Will read information from config file 'S358.cfg'.
+2015-09-10 13:47:12,488: DEBUG   : Checking TestBed for the test suite.
+2015-09-10 13:47:12,488: DEBUG   : Check availability of all testbed components.
+2015-09-10 13:47:12,488: DEBUG   : Getting testbed configuration.
+2015-09-10 13:47:12,488: DEBUG   : Will read list of targets.
+2015-09-10 13:47:12,488: DEBUG   : Found 2 targets.
+2015-09-10 13:47:12,488: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 13:47:12,488: DEBUG   : Successfuly got information about targets, to use in test suite.
+2015-09-10 13:47:12,489: DEBUG   : Will read list of clients.
+2015-09-10 13:47:12,489: DEBUG   : Found 1 client.
+2015-09-10 13:47:12,489: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 13:47:12,489: DEBUG   : Successfuly got information about clients, to use in test suite.
+2015-09-10 13:47:12,489: DEBUG   : Will read list of users.
+2015-09-10 13:47:12,489: DEBUG   : Found 2 users.
+2015-09-10 13:47:12,489: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 13:47:12,489: DEBUG   : Successfuly got information about users, to use in test suite.
+2015-09-10 13:47:12,489: DEBUG   : Will read information from config file 'win7x64-02.cfg'.
+2015-09-10 13:47:12,497: DEBUG   : Geting OS on 'win7x64-02'.
+2015-09-10 13:47:12,739: DEBUG   : Computer 'win7x64-02' (IP address 172.18.34.163) is running Windows.
+2015-09-10 13:47:12,739: DEBUG   : Check availability of client 'win7x64-02'.
+2015-09-10 13:47:12,740: DEBUG   : Geting OS on 'win7x64-02'.
+2015-09-10 13:47:12,968: DEBUG   : Computer 'win7x64-02' (IP address 172.18.34.163) is running Windows.
+2015-09-10 13:47:12,969: DEBUG   : Client 'win7x64-02' is available for test execution. It runs WIN.
+2015-09-10 13:47:12,969: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 13:47:12,970: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:47:12,970: DEBUG   : First of all check is replicator running.
+2015-09-10 13:47:12,970: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:47:12,971: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:47:13,283: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:47:13,904: WARNING : Process ID for replicator returns empty string.
+2015-09-10 13:47:13,905: WARNING : Replicator is down. Will try to start it.
+2015-09-10 13:47:13,905: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:47:14,075: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator start' on remote host.
+2015-09-10 13:47:14,773: DEBUG   : Replicator process is going to start on TFB 'auto-tfb30-01'. Waiting 20 seconds.
+2015-09-10 13:47:54,781: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:47:54,781: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:47:55,114: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:47:55,732: DEBUG   : Got process ID for replicator: 5100.
+2015-09-10 13:47:55,732: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:47:55,922: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:49:56,555: WARNING : Command didn't return expected result. Will wait and then re-run 9 times.
+2015-09-10 13:50:16,557: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:50:17,046: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:52:17,664: WARNING : Command didn't return expected result. Will wait and then re-run 8 times.
+2015-09-10 13:52:37,669: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:52:38,087: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:54:38,720: WARNING : Command didn't return expected result. Will wait and then re-run 7 times.
+2015-09-10 13:54:58,722: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:54:59,106: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:56:59,698: WARNING : Command didn't return expected result. Will wait and then re-run 6 times.
+2015-09-10 13:57:19,702: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:57:20,220: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:59:20,862: WARNING : Command didn't return expected result. Will wait and then re-run 5 times.
+2015-09-10 13:59:40,867: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:59:41,143: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 14:01:41,792: WARNING : Command didn't return expected result. Will wait and then re-run 4 times.
+2015-09-10 14:02:01,792: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 14:02:02,210: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 14:04:02,831: WARNING : Command didn't return expected result. Will wait and then re-run 3 times.
+2015-09-10 14:04:22,834: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 14:04:23,045: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 14:06:23,687: WARNING : Command didn't return expected result. Will wait and then re-run 2 times.
+2015-09-10 14:06:43,693: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 14:06:43,897: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 14:08:45,025: WARNING : Command didn't return expected result. Will wait and then re-run 1 times.
+2015-09-10 14:09:05,028: ERROR   : It takes too long to get reply. Something is wrong!
+2015-09-10 14:09:05,029: ERROR   : Cannot read owner ID from 'diag config'. It didn't reply.
+2015-09-10 14:09:05,029: ERROR   : Target 'auto-tfb30-01' is not ready for test execution.
+2015-09-10 14:09:05,029: WARNING : Testbed is not ready for test suite: 'S358 - AUTO: Initial play'. Will try to reset it.
+2015-09-10 14:09:05,029: DEBUG   : Perform clean-up procedure.
+2015-09-10 14:09:05,030: DEBUG   : Will read list of targets.
+2015-09-10 14:09:05,030: DEBUG   : Found 2 targets.
+2015-09-10 14:09:05,030: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 14:09:05,030: DEBUG   : Will read list of users.
+2015-09-10 14:09:05,030: DEBUG   : Found 2 users.
+2015-09-10 14:09:05,030: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 14:09:05,031: DEBUG   : Will read list of clients.
+2015-09-10 14:09:05,031: DEBUG   : Found 1 client.
+2015-09-10 14:09:05,031: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 14:09:05,031: DEBUG   : Will read information from config file 'automation.cfg'.
+2015-09-10 14:09:05,069: DEBUG   : Delete all pools belongs to user automation, if any.
+2015-09-10 14:09:05,070: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 14:09:06,084: DEBUG   : Get list of pools (pool ids) for user with id '54c7b9b883b37d1421d465b9'.
+2015-09-10 14:09:06,606: DEBUG   : User automation has no pools to delete.
+2015-09-10 14:09:06,606: DEBUG   : Will read information from config file 'auto-qa01.cfg'.
+2015-09-10 14:09:06,614: DEBUG   : Delete all pools belongs to user auto1.org1, if any.
+2015-09-10 14:09:06,614: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 14:09:07,048: DEBUG   : Get list of pools (pool ids) for user with id '54c8041383b37d9136d465b9'.
+2015-09-10 14:09:07,480: DEBUG   : Found 1 pools for user auto1.org1 (user ID '54c8041383b37d9136d465b9').
+2015-09-10 14:09:07,480: DEBUG   : Attempting to delete pool.
+2015-09-10 14:09:07,921: ERROR   : Pool with ID '54c804136cad8ebdb259ae99' was not deleted. Error code is 500.
+2015-09-10 14:09:07,921: WARNING : Unable delete pool with ID '54c804136cad8ebdb259ae99' (auto1.org1).
+2015-09-10 14:09:07,921: DEBUG   : Reset all transporters, if they are claimed.
+2015-09-10 14:09:07,921: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 14:09:07,958: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 14:09:07,958: DEBUG   : First of all check is replicator running.
+2015-09-10 14:09:07,958: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 14:09:07,958: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 14:09:08,337: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 14:09:09,485: WARNING : Process ID for replicator returns empty string.
+2015-09-10 14:09:09,485: WARNING : Replicator is down. Will try to start it.
+2015-09-10 14:09:09,485: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 14:09:09,800: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator start' on remote host.
+2015-09-10 14:09:10,947: DEBUG   : Replicator process is going to start on TFB 'auto-tfb30-01'. Waiting 20 seconds.

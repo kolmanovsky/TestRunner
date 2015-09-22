@@ -106,6 +106,8 @@ def main():
     # application:
 
     logger = logging.getLogger('autobot')
+    logging.getLogger("requests").setLevel(logging.WARNING)
+    logging.getLogger("paramiko.transport").setLevel(logging.WARNING)
 
     # ======================================================
     # MAIN
@@ -159,25 +161,93 @@ def main():
         tcases = suite.testcases
         tc_count = len(tcases)
         if tc_count == 0:
-            logging.warning("Test suite '"+suite.suiteid+": "+suite.suitename+" has no test cases.")
             msg = "doesn't have any test cases."
         elif tc_count == 1:
             msg = "has 1 test case."
         else:
             msg = "has "+str(tc_count)+" test cases."
-
         logger.info("Test suite '"+suite.suiteid+" - "+suite.suitename+"' "+msg)
 
         testbed = ta.taTestbed(suite.suiteid)
 
         for x in range (1,4):
             status = testbed.checksetup()
-            if status.lower() == 'error':
+            if status == 'Error':
                 logger.error("Testbed is not ready for execution tests from '"+suite.suiteid+": "+suite.suitename+"'.")
                 chck = testbed.cleanup()
                 time.sleep(timeout)
             else:
                 logger.info("Testbed is ready for execution tests from '"+suite.suiteid+": "+suite.suitename+"'.")
+                break
+
+        result = testbed.targetset()
+        if result == 'Error':
+            status = result
+
+        if status == 'Error':
+            logger.error("Execution of '"+suite.suiteid+": "+suite.suitename+"' is blocked by testbed error.")
+            tc_count = 0
+
+        trrun = testbed.trrun
+        version = testbed.targetver()
+
+        for testcase in tcases:
+            logger.info("------>>")
+            logger.info("Going to execute test case '"+testcase+"'.")
+
+            tc_start = time.time()
+
+            tc = getattr(suite,testcase)
+            if not ismethod(tc):
+                logger.warning("Test case '"+testcase+"' does not exist in code.")
+                continue
+
+            result = tc(testbed)
+            if result == 99:
+                message = "Test case '"+testcase+"' was blocked by evironment error."
+                logger.warning(message)
+                tc_status = 2
+            elif result == 0:
+                message = "Test case '"+testcase+"' passed."
+                logger.debug(message)
+                tc_status = 1
+            elif result == 13:
+                message = "Test case '"+testcase+"' cannot run because of error not related to the case."
+                logger.warning(message)
+                tc_status = 2
+            else:
+                message = "Test case '"+testcase+"' failed."
+                logger.warning(message)
+                tc_status = 5
+
+            if result in (1,13,99):
+                logger.info("Will retry to execute test case on clean setup.")
+                chck = testbed.cleanup()
+                result = tc(testbed)
+                if result == 0:
+                    message = "Test case '"+testcase+"' conditionly passed."
+                    tc_status = 7
+                else:
+                    message = "Test case '"+testcase+"' didn't pass."
+                logger.debug("Re-execution on freshly cleaned setup: "+message)
+
+            logger.info(message)
+
+            tc_time = timer(tc_start)
+            tc_id = testcase[1:]
+            run_id = trrun[1:]
+
+            tr_command = 'add_result_for_case/'+run_id+'/'+tc_id
+            payload = {'status_id':tc_status,'comment':message,'elapsed':tc_time,'version':version}
+
+            try:
+                rCode = tr.send_post(tr_command,payload)
+                logger.debug("Execution result of test case '"+testcase+"' was successfully submitted to the TestRail.")
+            except:
+                logger.error("Result submition for test case '"+testcase+"' caused an error.")
+
+
+
 
         logger.info("---> Summary for '"+suite.suiteid+": "+suite.suitename+"'.")
         logger.info("Executed "+str(tc_count)+" test cases.")

@@ -1,0 +1,55 @@
+09-21-2015 09:11:08 autobot      INFO     ============================================================================================
+09-21-2015 09:11:08 autobot      INFO     Test execution starts 21-Sep-2015 at 09:11:08 PDT
+09-21-2015 09:11:08 autobot      INFO     Test execution based on autobot.cfg file.
+09-21-2015 09:11:08 autobot      INFO     ============================================================================================
+09-21-2015 09:11:08 autobot      INFO     Getting TestRail configuration.
+09-21-2015 09:11:08 autobot      DEBUG    Will use TestRail at 'http://172.24.1.33/testrail' using 'qa-auto@connecteddata.com/automatethis'.
+09-21-2015 09:11:08 autobot      INFO     Creating connection to the TestRail.
+09-21-2015 09:11:09 autobot      INFO     ===> Test suite 'S358: AUTO: Initial play'.
+09-21-2015 09:11:09 autobot      INFO     Starts at 21-Sep-2015 at 09:11:09 PDT
+09-21-2015 09:11:09 autobot      INFO     Test suite 'S358 - AUTO: Initial play' has 8 test cases.
+09-21-2015 09:11:09 testbed      DEBUG    Will read information from config file 'S358.cfg'.
+09-21-2015 09:11:09 testbed      INFO     Check availability of all testbed components.
+09-21-2015 09:11:09 testbed      DEBUG    Getting testbed configuration.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of targets.
+09-21-2015 09:11:09 testbed      DEBUG    Found 2 targets.
+09-21-2015 09:11:09 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of clients.
+09-21-2015 09:11:09 testbed      DEBUG    Found 1 client.
+09-21-2015 09:11:09 testbed      DEBUG    Client's list: ['win7x64-02']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of users.
+09-21-2015 09:11:09 testbed      DEBUG    Found 2 users.
+09-21-2015 09:11:09 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-21-2015 09:11:09 client-lib   DEBUG    Will read information from config file 'win7x64-02.cfg'.
+09-21-2015 09:11:09 client-lib   DEBUG    Getting OS on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   DEBUG    Check availability of client 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   DEBUG    Getting OS on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   ERROR    Something went wrong when checked platform on 'win7x64-02'.
+09-21-2015 09:11:09 testbed      ERROR    Client 'win7x64-02' is not available for test execution.
+09-21-2015 09:11:09 autobot      ERROR    Testbed is not ready for execution tests from 'S358: AUTO: Initial play'.
+09-21-2015 09:11:09 testbed      INFO     Attempt to bring testbed into default state.
+09-21-2015 09:11:09 testbed      DEBUG    Getting testbed configuration.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of targets.
+09-21-2015 09:11:09 testbed      DEBUG    Found 2 targets.
+09-21-2015 09:11:09 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of clients.
+09-21-2015 09:11:09 testbed      DEBUG    Found 1 client.
+09-21-2015 09:11:09 testbed      DEBUG    Client's list: ['win7x64-02']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-21-2015 09:11:09 testbed      DEBUG    Will read list of users.
+09-21-2015 09:11:09 testbed      DEBUG    Found 2 users.
+09-21-2015 09:11:09 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-21-2015 09:11:09 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-21-2015 09:11:09 client-lib   DEBUG    Will read information from config file 'win7x64-02.cfg'.
+09-21-2015 09:11:09 client-lib   DEBUG    Getting OS on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   INFO     Attempt to set client according to config file.
+09-21-2015 09:11:09 client-lib   DEBUG    Disconnect all attached storages if any.
+09-21-2015 09:11:09 client-lib   INFO     Check and remove all network file systems attached to the client 'win7x64-02'.
+09-21-2015 09:11:09 client-lib   INFO     Checking for network file systems attached to the client 'win7x64-02'.

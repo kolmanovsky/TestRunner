@@ -7,7 +7,7 @@ import json
 import taClient as clt
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('cs-lib')
 
 # ==============================================================
 # General function for use with CS
@@ -75,53 +75,69 @@ class autoCS:
             logger.error("Device with ID '"+deviceid+"' was not reset. Error code is "+str(claim.status_code)+".")
             return 'Error'
 
-    def csAddPool(self,poolname,creatorid,pooltype,deviceid,localpath,nas):
+    def csAddPool(self,poolname,creatorid,nas=None):
         """
         Send request to CS to add new pool
         :return: poolid - success, 13 - fail to add pool
         """
         logger.debug("Attempting to create pool.")
 
-        if localpath == '':
-            localpath = '/.'+poolname
+        localpath = "/."+poolname
 
         url = self.csurl + "/polcentral/v1_0/pools/"
 
-        if pooltype not in ["MW","PS"]:
-            logger.error("Fail to create pool of unknown type: '"+pooltype+"'.")
-            return 'Error'
-        else:
-            logger.debug("Configuration required '"+pooltype+"' type of "+poolname+" pool.")
-
         if nas == None:
-            logger.warning("NAS info is missing. Pool will be created as 'MW' type.")
-            pooltype = "MW"
-            nasname = ''
-            nasshare = ''
-            naspath = ''
-            nascred = ''
+            logger.debug("No NAS object provided, will create pool '"+poolname+"' type 'MW'.")
+            pooltype = 'MW'
+            subscribedevices = True
+            deviceid = ''
+            pathinpool = '/'
+            servername = ''
+            sharename = ''
+            sharepath = ''
+            creditname = ''
+            overridewarnings = True
         else:
-            logger.error("Not ready yet.")
-            return 'Error'
+            logger.debug("NAS object provided, will create pool '"+poolname+"' type 'PS'.")
+            pooltype = 'PS'
+            subscribedevices = True
+            deviceid = ''
+            pathinpool = '/'
+            servername = ''
+            sharename = ''
+            sharepath = ''
+            creditname = ''
+            overridewarnings = True
 
         payload = {
-                  "name": poolname,
-                  "description":"Pool added by testbot",
-                        "creatorid": {
-                            "$id": creatorid
-                        },
-                        "type":pooltype,
-                        "allowpiggybacks":True,
-                        "localpoolpath": localpath,
-                        "subscribedevices":True,
-                        "deviceid": deviceid,
-                        "pathinpool": "/",
-                        "servername": nasname,
-                        "sharename": nasshare,
-                        "sharepath": naspath,
-                        "credsetname": nascred,
-                        "overridewarnings":True
-                    }
+            "name": poolname,
+            "description":"Pool added by testbot",
+            "creatorid": {"$id": creatorid},
+            "type":pooltype,
+            "allowpiggybacks":True,
+            "localpoolpath": localpath
+        }
+        """
+        payload = {
+            "name": poolname,
+            "description":"Pool added by testbot",
+            "creatorid": {"$id": creatorid},
+            "type":pooltype,
+            "allowpiggybacks":True,
+            "localpoolpath": localpath,
+            "subscribedevices":subscribedevices,
+            "deviceid": deviceid,
+            "pathinpool": pathinpool,
+            "servername": servername,
+            "sharename": sharename,
+            "sharepath": sharepath,
+            "credsetname": creditname,
+            "overridewarnings": overridewarnings
+        }
+        """
+
+        print url
+        print payload
 
         try:
             r = requests.post(url, data=json.dumps(payload))
@@ -160,6 +176,44 @@ class autoCS:
         else:
             logger.error("Pool with ID '"+poolid+"' was not deleted. Error code is "+str(r.status_code)+".")
             return 'Error'
+
+    def csGetCustomerPools(self,userid):
+        """
+
+        :return:
+        """
+
+        logger.debug("Retrive pools assotiated with customer id "+userid+".")
+
+        pools = []
+
+        url = self.csurl + "/polcentral/v1_0/customers/"+userid+"/pools"
+
+        try:
+            r = requests.get(url)
+        except:
+            logger.error("Exception during api call to get pool's owner ID.")
+            return 'Error'
+
+        if r.status_code == 200:
+            logger.debug("Sucessfully retrive ID of the pool owner.")
+            poolsinfo = r.json()
+            for pool in poolsinfo:
+                pools.append(pool['poolid'])
+        else:
+            logger.error("Didn't get pool information. Error code is "+str(r.status_code)+".")
+            return 'Error'
+
+        number = len(pools)
+        if number == 0:
+            msg = "There are no pools assotiated with user "+userid+"."
+        elif number == 1:
+            msg = "There is only one pool assotiated with user "+userid+"."
+        else:
+            msg = "There are "+str(number)+" pools assotiated with user "+userid+"."
+
+        logger.debug(msg)
+        return pools
 
     def csAddSubscription(self,poolid,deviceid,customerid):
         """
@@ -393,52 +447,11 @@ class autoCS:
             logger.error("Failed to rename device.")
             return 'Error'
 
-    def scAddPoolNas(self,poolname,creatorid,deviceid,desktop):
-
-        logger.debug("Attempting to create NAS pool.")
-
-        url = self.csurl + "/polcentral/v1_0/pools/"
-
-        client = clt.autoClient(desktop)
-
-        payload = {
-                    "name":poolname,
-                    "description":"AUTO test map",
-                    "creatorid": {
-                        "$id": creatorid
-                        },
-                    "type":"PS",
-                    "allowpiggybacks":True,
-                    "localpoolpath": "/.RootOfNetworkAttached",
-                    "subscribedevices":True,
-                    "deviceid": deviceid,
-                    "pathinpool": "/",
-                    "servername": client.smbserv,
-                    "sharename": self.smbnas,
-                    "sharepath": "/path/in/engineering/share",
-                    "credsetname": "CredSetName2",
-                    "overridewarnings":True
-                    }
-
-        try:
-            r = requests.post(url, data=json.dumps(payload))
-        except Exception:
-            logger.error("Exception during api call to add pool.")
-            return 'Error'
-
-        if r.status_code == 200:
-            logger.debug("Pool '"+poolname+"' was successfully created.")
-            poolid = r.json()['_id']
-            return poolid['$id']
-        else:
-            logger.error("Pool '"+poolname+"' was not created. Error code is "+str(r.status_code)+".")
-            return 'Error'
-
-    def poolSetup(self,poolname,adminid,clientid,pooltype,deviceid='',localpath='',nas=None):
+    def poolSetup(self,poolname,adminid,clientid):
 
         logger.debug("Will create pool '"+poolname+"'.")
-        pool_id = self.csAddPool(poolname,adminid,pooltype,deviceid,localpath,nas)
-        if pool_id == 13:
+        pool_id = self.csAddPool(poolname,adminid)
+        if pool_id == 'Error':
             logger.error("Failed to create pool '"+poolname+"'.")
             return 'Error'
         else:

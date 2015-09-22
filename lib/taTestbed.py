@@ -9,8 +9,10 @@ from autobot import cfg
 import taUser as usr
 import taTransporter as tfb
 import taClient as clt
+import threading
 
-logger = logging.getLogger('taTestbed')
+
+logger = logging.getLogger('testbed')
 
 
 class taTestbed:
@@ -101,7 +103,7 @@ class taTestbed:
 
         # Get setup
         clients, targets, users = self.getsetup()
-        if clients.lower() == 'error':
+        if clients[0].lower() == 'error':
             logger.error("Failed to read setup for test suite. Cannot proceed.")
             return 'Error'
 
@@ -109,7 +111,7 @@ class taTestbed:
         for client in clients:
             system = clt.autoClient(client)
             status = system.checkClient()
-            if status.lower() == 'error':
+            if status == 'Error':
                 logger.error("Client '"+client+"' is not available for test execution.")
                 return 'Error'
             else:
@@ -118,7 +120,7 @@ class taTestbed:
         for target in targets:
             system = tfb.taTransporter(target)
             status = system.isClaimed()
-            if status.lower() == 'unclaimed':
+            if status == 'Unclaimed':
                 logger.debug("Target '"+target+"' passed pre-fly check. It is "+status.lower()+".")
             else:
                 logger.error("Target '"+target+"' is not ready for test execution.")
@@ -127,7 +129,7 @@ class taTestbed:
         for user in users:
             system = usr.autoUser(user)
             status = system.getCustomerID()
-            if status.lower() == 'error':
+            if status == 'Error':
                 logger.error("User '"+user+"' is not ready for test execution.")
                 return 'Error'
             else:
@@ -140,15 +142,20 @@ class taTestbed:
 
         # Get setup
         clients, targets, users = self.getsetup()
-        if clients.lower() == 'error':
+        if clients[0] == 'Error':
             logger.error("Failed to read setup for test suite. Cannot proceed.")
             return 'Error'
+
+        for user in users:
+            customer = usr.autoUser(user)
+            result = customer.userReset()
+
 
         # Reset clients
         for client in clients:
             system = clt.autoClient(client)
             status = system.reset()
-            if status.lower() == 'error':
+            if status == 'Error':
                 logger.error("Unable to reset client '"+client+"'.")
                 return 'Error'
             else:
@@ -158,8 +165,54 @@ class taTestbed:
         for target in targets:
             system = tfb.taTransporter(target)
             status = system.reset()
-            if status.lower() == 'error':
+            if status == 'Error':
                 logger.error("Unable to reset '"+target+"'.")
                 return 'Error'
             else:
                 logger.info("Target '"+target+"' was successfully reset.")
+
+    def targetset(self):
+
+        devices = self.targets.split(',')
+
+        for device in devices:
+            target = tfb.taTransporter(device.strip())
+
+            result = target.buildCheck()
+            if result == 'Error':
+                logger.error("Failed to configure "+target.type+" '"+target.name+"' for test execution.")
+                return 'Error'
+
+        return 'Success'
+
+    def targetver(self):
+        """
+
+        :return:
+        """
+
+        devices = self.targets.split(',')
+        version = []
+
+        for device in devices:
+            target = tfb.taTransporter(device.strip())
+            target_ver = target.readFWversion()
+            if target_ver == 'Error':
+                logger.error("Failed to get FW version from "+target.type+" '"+target.name+"'.")
+                return 'Error'
+            else:
+                version.append(target_ver)
+
+        fwnum = len(set(version))
+        if fwnum == 1:
+            logger.debug("All transporters are running version '"+version[0]+"'.")
+            result = version[0]
+        elif fwnum == 0:
+            logger.warning("Something went wrong. FW version was not detected.")
+            result = 'Unknown'
+        else:
+            logger.warning("There are different FW versions. One of them is '"+version[0]+"'.")
+            result = version[0]+"+/-"
+
+        return result
+

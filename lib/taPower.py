@@ -5,7 +5,7 @@ from autobot import cfg
 import logging
 import requests
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('power-lib')
 
 class power():
     """

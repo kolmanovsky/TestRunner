@@ -1,0 +1,68 @@
+09-22-2015 11:22:24 autobot      INFO     ============================================================================================
+09-22-2015 11:22:24 autobot      INFO     Test execution starts 22-Sep-2015 at 11:22:24 PDT
+09-22-2015 11:22:24 autobot      INFO     Test execution based on autobot.cfg file.
+09-22-2015 11:22:24 autobot      INFO     ============================================================================================
+09-22-2015 11:22:24 autobot      INFO     Getting TestRail configuration.
+09-22-2015 11:22:24 autobot      DEBUG    Will use TestRail at 'http://172.24.1.33/testrail' using 'qa-auto@connecteddata.com/automatethis'.
+09-22-2015 11:22:24 autobot      INFO     Creating connection to the TestRail.
+09-22-2015 11:22:25 autobot      INFO     ===> Test suite 'S360: AUTO: Graceful shutdown'.
+09-22-2015 11:22:25 autobot      INFO     Starts at 22-Sep-2015 at 11:22:25 PDT
+09-22-2015 11:22:25 autobot      INFO     Test suite 'S360 - AUTO: Graceful shutdown' has 1 test case.
+09-22-2015 11:22:25 testbed      DEBUG    Will read information from config file 'S360.cfg'.
+09-22-2015 11:22:25 testbed      INFO     Check availability of all testbed components.
+09-22-2015 11:22:25 testbed      DEBUG    Getting testbed configuration.
+09-22-2015 11:22:25 testbed      DEBUG    Will read list of targets.
+09-22-2015 11:22:25 testbed      DEBUG    Found 2 targets.
+09-22-2015 11:22:25 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 11:22:25 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-22-2015 11:22:25 testbed      DEBUG    Will read list of clients.
+09-22-2015 11:22:25 testbed      DEBUG    Found 1 client.
+09-22-2015 11:22:25 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 11:22:25 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-22-2015 11:22:25 testbed      DEBUG    Will read list of users.
+09-22-2015 11:22:25 testbed      DEBUG    Found 2 users.
+09-22-2015 11:22:25 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 11:22:25 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-22-2015 11:22:25 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 11:22:25 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 11:22:28 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-01'.
+09-22-2015 11:22:29 client-lib   DEBUG    Check availability of client 'win7x64-01'.
+09-22-2015 11:22:29 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 11:22:32 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-01'.
+09-22-2015 11:22:32 client-lib   ERROR    Something went wrong when checked platform on 'win7x64-01'.
+09-22-2015 11:22:32 testbed      ERROR    Client 'win7x64-01' is not available for test execution.
+09-22-2015 11:22:32 autobot      ERROR    Testbed is not ready for execution tests from 'S360: AUTO: Graceful shutdown'.
+09-22-2015 11:22:32 testbed      INFO     Attempt to bring testbed into default state.
+09-22-2015 11:22:32 testbed      DEBUG    Getting testbed configuration.
+09-22-2015 11:22:32 testbed      DEBUG    Will read list of targets.
+09-22-2015 11:22:32 testbed      DEBUG    Found 2 targets.
+09-22-2015 11:22:32 testbed      DEBUG    Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+09-22-2015 11:22:32 testbed      DEBUG    Successfully got information about targets, to use in test suite.
+09-22-2015 11:22:32 testbed      DEBUG    Will read list of clients.
+09-22-2015 11:22:32 testbed      DEBUG    Found 1 client.
+09-22-2015 11:22:32 testbed      DEBUG    Client's list: ['win7x64-01']
+09-22-2015 11:22:32 testbed      DEBUG    Successfully got information about clients, to use in test suite.
+09-22-2015 11:22:32 testbed      DEBUG    Will read list of users.
+09-22-2015 11:22:32 testbed      DEBUG    Found 2 users.
+09-22-2015 11:22:32 testbed      DEBUG    User's list: ['automation', 'auto-qa01']
+09-22-2015 11:22:32 testbed      DEBUG    Successfully got information about users, to use in test suite.
+09-22-2015 11:22:32 user-lib     DEBUG    Will read information from config file 'automation.cfg'.
+09-22-2015 11:22:32 user-lib     INFO     Will reset customer automation.
+09-22-2015 11:22:32 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 11:22:33 cs-lib       DEBUG    Get list of pools (pool ids) for user with id '54c7b9b883b37d1421d465b9'.
+09-22-2015 11:22:33 user-lib     DEBUG    Will read information from config file 'auto-qa01.cfg'.
+09-22-2015 11:22:33 user-lib     INFO     Will reset customer auto1.org1.
+09-22-2015 11:22:33 cs-lib       DEBUG    Attempt to get customer ID by account name.
+09-22-2015 11:22:33 cs-lib       DEBUG    Get list of pools (pool ids) for user with id '54c8041383b37d9136d465b9'.
+09-22-2015 11:22:34 cs-lib       DEBUG    Retrive information for the pool.
+09-22-2015 11:22:34 cs-lib       DEBUG    Sucessfully retrive ID of the pool owner.
+09-22-2015 11:22:34 cs-lib       DEBUG    Attempting to delete pool.
+09-22-2015 11:22:35 cs-lib       ERROR    Pool with ID '54c804136cad8ebdb259ae99' was not deleted. Error code is 500.
+09-22-2015 11:22:35 user-lib     WARNING  Unable to delete pool '39109586321340ABACE5AD908091BA0E' (pool id=54c804136cad8ebdb259ae99) assotiated with user 'auto1.org1'.
+09-22-2015 11:22:35 client-lib   DEBUG    Will read information from config file 'win7x64-01.cfg'.
+09-22-2015 11:22:35 client-lib   DEBUG    Getting OS on 'win7x64-01'.
+09-22-2015 11:22:38 client-lib   ERROR    Cannot connect to RPYC on 'win7x64-01'.
+09-22-2015 11:22:38 client-lib   INFO     Attempt to set client according to config file.
+09-22-2015 11:22:38 client-lib   DEBUG    Disconnect all attached storages if any.
+09-22-2015 11:22:38 client-lib   INFO     Check and remove all network file systems attached to the client 'win7x64-01'.
+09-22-2015 11:22:38 client-lib   INFO     Checking for network file systems attached to the client 'win7x64-01'.

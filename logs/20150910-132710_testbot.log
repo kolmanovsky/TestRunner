@@ -1,0 +1,496 @@
+2015-09-10 13:27:11,865: INFO    : ============================================================================================
+2015-09-10 13:27:11,879: INFO    : Test execution starts 10-Sep-2015 at 13:27:11 PDT
+2015-09-10 13:27:11,879: INFO    : Test execution based on testbot.cfg file.
+2015-09-10 13:27:11,880: INFO    : ============================================================================================
+2015-09-10 13:27:11,918: INFO    : ------- Test suite -------
+2015-09-10 13:27:11,918: INFO    : 'S358: AUTO: Initial play' starts 10-Sep-2015 at 13:27:11 PDT
+2015-09-10 13:27:11,918: INFO    : Test suite 'S358 - AUTO: Initial play' has 8 test cases.
+2015-09-10 13:27:11,918: DEBUG   : Will read information from config file 'S358.cfg'.
+2015-09-10 13:27:11,932: DEBUG   : Checking TestBed for the test suite.
+2015-09-10 13:27:11,932: DEBUG   : Check availability of all testbed components.
+2015-09-10 13:27:11,932: DEBUG   : Getting testbed configuration.
+2015-09-10 13:27:11,933: DEBUG   : Will read list of targets.
+2015-09-10 13:27:11,933: DEBUG   : Found 2 targets.
+2015-09-10 13:27:11,933: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 13:27:11,933: DEBUG   : Successfuly got information about targets, to use in test suite.
+2015-09-10 13:27:11,933: DEBUG   : Will read list of clients.
+2015-09-10 13:27:11,933: DEBUG   : Found 1 client.
+2015-09-10 13:27:11,933: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 13:27:11,934: DEBUG   : Successfuly got information about clients, to use in test suite.
+2015-09-10 13:27:11,934: DEBUG   : Will read list of users.
+2015-09-10 13:27:11,934: DEBUG   : Found 2 users.
+2015-09-10 13:27:11,934: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 13:27:11,934: DEBUG   : Successfuly got information about users, to use in test suite.
+2015-09-10 13:27:11,935: DEBUG   : Will read information from config file 'win7x64-02.cfg'.
+2015-09-10 13:27:11,941: DEBUG   : Geting OS on 'win7x64-02'.
+2015-09-10 13:27:12,167: DEBUG   : Computer 'win7x64-02' (IP address 172.18.34.163) is running Windows.
+2015-09-10 13:27:12,168: DEBUG   : Check availability of client 'win7x64-02'.
+2015-09-10 13:27:12,168: DEBUG   : Geting OS on 'win7x64-02'.
+2015-09-10 13:27:12,379: DEBUG   : Computer 'win7x64-02' (IP address 172.18.34.163) is running Windows.
+2015-09-10 13:27:12,380: DEBUG   : Client 'win7x64-02' is available for test execution. It runs WIN.
+2015-09-10 13:27:12,380: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 13:27:12,382: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:27:12,382: DEBUG   : First of all check is replicator running.
+2015-09-10 13:27:12,382: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:27:12,382: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:27:12,957: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:27:14,298: DEBUG   : Got process ID for replicator: 30732.
+2015-09-10 13:27:14,298: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:27:14,478: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:27:15,608: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:27:15,609: DEBUG   : Owner ID from 'diag config' retrived as '000000000000000000000000'.
+2015-09-10 13:27:15,609: DEBUG   : Target 'auto-tfb30-01' passed pre-fly check. It is unclaimed.
+2015-09-10 13:27:15,609: DEBUG   : Will read information from config file 'auto-tfb15-01.target'.
+2015-09-10 13:27:15,610: DEBUG   : Validate availability of TFB 'auto-tfb15-01'.
+2015-09-10 13:27:15,610: DEBUG   : First of all check is replicator running.
+2015-09-10 13:27:15,610: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:27:15,610: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:27:15,786: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:27:16,584: DEBUG   : Got process ID for replicator: 30979.
+2015-09-10 13:27:16,585: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:27:16,762: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:27:17,412: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:27:17,412: DEBUG   : Owner ID from 'diag config' retrived as '000000000000000000000000'.
+2015-09-10 13:27:17,412: DEBUG   : Target 'auto-tfb15-01' passed pre-fly check. It is unclaimed.
+2015-09-10 13:27:17,412: DEBUG   : Will read information from config file 'automation.cfg'.
+2015-09-10 13:27:17,431: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:27:18,431: DEBUG   : User 'automation' passed pre-fly check. Has CID 54c7b9b883b37d1421d465b9.
+2015-09-10 13:27:18,431: DEBUG   : Will read information from config file 'auto-qa01.cfg'.
+2015-09-10 13:27:18,475: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:27:18,841: DEBUG   : User 'auto-qa01' passed pre-fly check. Has CID 54c8041383b37d9136d465b9.
+2015-09-10 13:27:18,841: DEBUG   : Testbed is good. Let's do some testing.
+2015-09-10 13:27:18,842: DEBUG   : Perform check-in procedure.
+2015-09-10 13:27:18,842: DEBUG   : Getting list of devices and users.
+2015-09-10 13:27:18,842: DEBUG   : Will read list of targets.
+2015-09-10 13:27:18,842: DEBUG   : Found 2 targets.
+2015-09-10 13:27:18,842: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 13:27:18,842: DEBUG   : Will read list of users.
+2015-09-10 13:27:18,842: DEBUG   : Found 2 users.
+2015-09-10 13:27:18,842: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 13:27:18,842: DEBUG   : Will read list of clients.
+2015-09-10 13:27:18,843: DEBUG   : Found 1 client.
+2015-09-10 13:27:18,843: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 13:27:18,843: DEBUG   : Will read information from config file 'automation.cfg'.
+2015-09-10 13:27:18,843: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:27:19,217: DEBUG   : Got customer ID (54c7b9b883b37d1421d465b9) for org admin (automation).
+2015-09-10 13:27:19,217: DEBUG   : Clients check.
+2015-09-10 13:27:19,217: DEBUG   : Will read information from config file 'win7x64-02.cfg'.
+2015-09-10 13:27:19,218: DEBUG   : Geting OS on 'win7x64-02'.
+2015-09-10 13:27:19,447: DEBUG   : Computer 'win7x64-02' (IP address 172.18.34.163) is running Windows.
+2015-09-10 13:27:19,447: DEBUG   : Client computer 'win7x64-02' running OS WIN.
+2015-09-10 13:27:19,448: DEBUG   : Local path to the Transporter Library is 'C:\Users\automation\Transporter\Transporter Library'.
+2015-09-10 13:27:19,448: DEBUG   : Transporters check.
+2015-09-10 13:27:19,448: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 13:27:19,449: DEBUG   : Perform check on FW version on TFB 'auto-tfb30-01'.
+2015-09-10 13:27:19,449: DEBUG   : Configuration requires to install latest build.
+2015-09-10 13:27:19,449: DEBUG   : Will search for latest build for '4.2.x' version.
+2015-09-10 13:27:19,449: DEBUG   : Working with build from BuildBot.
+2015-09-10 13:27:19,450: DEBUG   : Delete old version of temporary file.
+2015-09-10 13:27:24,659: DEBUG   : Build path is: http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+2015-09-10 13:27:25,317: DEBUG   : Build exists at http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+2015-09-10 13:27:25,317: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:27:25,491: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' upgrade-manager full none none http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz' on remote host.
+2015-09-10 13:38:57,914: DEBUG   : Successfully run installation of new build on TFB 'auto-tfb30-01'. Waiting up to 20 seconds.
+2015-09-10 13:38:59,917: DEBUG   : First of all check is replicator running.
+2015-09-10 13:38:59,918: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:38:59,918: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:38:59,919: WARNING : SSH connection failed: [Errno 61] Connection refused.
+2015-09-10 13:38:59,920: DEBUG   : Got process ID for replicator: E.
+2015-09-10 13:38:59,920: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:38:59,921: WARNING : SSH connection failed: [Errno 61] Connection refused.
+2015-09-10 13:38:59,921: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 9 times.
+2015-09-10 13:39:01,923: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:10,249: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:10,914: WARNING : Command didn't return expected result. Will wait and then re-run 8 times.
+2015-09-10 13:40:12,918: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:13,270: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:13,869: WARNING : Command didn't return expected result. Will wait and then re-run 7 times.
+2015-09-10 13:40:15,870: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:16,000: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:16,631: WARNING : Command didn't return expected result. Will wait and then re-run 6 times.
+2015-09-10 13:40:18,632: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:18,787: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:19,390: WARNING : Command didn't return expected result. Will wait and then re-run 5 times.
+2015-09-10 13:40:21,395: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:21,553: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:22,162: WARNING : Command didn't return expected result. Will wait and then re-run 4 times.
+2015-09-10 13:40:24,163: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:24,321: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:24,952: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:40:24,952: DEBUG   : FW version from 'diag config' retrived as '4.2.0 (19833) '.
+2015-09-10 13:40:24,952: DEBUG   : After 2 seconds TFB 'auto-tfb30-01' reported FW version: '4.2.0 (19833) '.
+2015-09-10 13:40:24,953: DEBUG   : First of all check is replicator running.
+2015-09-10 13:40:24,953: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:40:24,953: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:25,128: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:40:25,765: DEBUG   : Got process ID for replicator: 1827.
+2015-09-10 13:40:25,765: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:25,941: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:26,545: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:40:26,545: DEBUG   : FW version from 'diag config' retrived as '4.2.0 (19833) '.
+2015-09-10 13:40:26,545: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:40:26,545: DEBUG   : First of all check is replicator running.
+2015-09-10 13:40:26,546: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:40:26,546: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:26,720: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:40:27,334: DEBUG   : Got process ID for replicator: 1827.
+2015-09-10 13:40:27,334: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:27,504: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:28,118: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:40:28,119: DEBUG   : Owner ID from 'diag config' retrived as '000000000000000000000000'.
+2015-09-10 13:40:28,119: DEBUG   : First of all check is replicator running.
+2015-09-10 13:40:28,119: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:40:28,119: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:28,297: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:40:28,916: DEBUG   : Got process ID for replicator: 1827.
+2015-09-10 13:40:28,917: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:29,080: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:29,695: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:40:29,695: DEBUG   : Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e9'.
+2015-09-10 13:40:29,695: DEBUG   : Attempting to claim device '5490a7b0a01f46b8350000e9' by user '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:40:31,157: DEBUG   : Device with ID '5490a7b0a01f46b8350000e9' was successfully claimed.
+2015-09-10 13:40:31,157: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:31,310: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+2015-09-10 13:40:36,503: DEBUG   : Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 2 seconds.
+2015-09-10 13:40:40,508: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:40:40,509: DEBUG   : First of all check is replicator running.
+2015-09-10 13:40:40,509: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:40:40,509: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:40,640: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:40:41,288: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:40:41,288: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:41,437: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:42,076: WARNING : Command didn't return expected result. Will wait and then re-run 9 times.
+2015-09-10 13:40:44,081: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:44,244: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:44,851: WARNING : Command didn't return expected result. Will wait and then re-run 8 times.
+2015-09-10 13:40:46,855: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:47,033: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:47,684: WARNING : Command didn't return expected result. Will wait and then re-run 7 times.
+2015-09-10 13:40:49,687: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:49,870: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:50,469: WARNING : Command didn't return expected result. Will wait and then re-run 6 times.
+2015-09-10 13:40:52,474: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:52,695: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:53,302: WARNING : Command didn't return expected result. Will wait and then re-run 5 times.
+2015-09-10 13:40:55,303: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:55,460: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:56,099: WARNING : Command didn't return expected result. Will wait and then re-run 4 times.
+2015-09-10 13:40:58,100: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:40:58,259: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:40:58,888: WARNING : Command didn't return expected result. Will wait and then re-run 3 times.
+2015-09-10 13:41:00,892: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:41:01,054: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:41:01,696: WARNING : Command didn't return expected result. Will wait and then re-run 2 times.
+2015-09-10 13:41:03,699: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:41:03,908: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:41:04,514: WARNING : Command didn't return expected result. Will wait and then re-run 1 times.
+2015-09-10 13:41:06,519: ERROR   : It takes too long to get reply. Something is wrong!
+2015-09-10 13:41:06,520: ERROR   : Cannot read owner ID from 'diag config'. It didn't reply.
+2015-09-10 13:41:06,562: WARNING : TFB 'auto-tfb30-01' is not claimed in 28.0119888783 seconds after CS call.
+2015-09-10 13:41:08,562: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:41:08,563: DEBUG   : First of all check is replicator running.
+2015-09-10 13:41:08,563: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:41:08,563: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:41:08,827: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:41:09,457: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:41:09,457: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:41:09,665: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:41:10,277: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:41:10,277: DEBUG   : Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:41:10,277: DEBUG   : TFB 'auto-tfb30-01' was successfully claimed with CS call.
+2015-09-10 13:41:10,277: DEBUG   : Rename TFB.
+2015-09-10 13:41:10,278: DEBUG   : Rename device to 'auto-tfb30-01'.
+2015-09-10 13:41:10,771: DEBUG   : TFB 'auto-tfb30-01' was successfully claimed.
+2015-09-10 13:41:10,771: DEBUG   : Will read information from config file 'auto-tfb15-01.target'.
+2015-09-10 13:41:10,813: DEBUG   : Perform check on FW version on TFB 'auto-tfb15-01'.
+2015-09-10 13:41:10,814: DEBUG   : Configuration requires to install latest build.
+2015-09-10 13:41:10,814: DEBUG   : Will search for latest build for '4.2.x' version.
+2015-09-10 13:41:10,814: DEBUG   : Working with build from BuildBot.
+2015-09-10 13:41:10,815: DEBUG   : Delete old version of temporary file.
+2015-09-10 13:41:16,000: DEBUG   : Build path is: http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+2015-09-10 13:41:16,006: DEBUG   : Build exists at http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz
+2015-09-10 13:41:16,007: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:41:16,217: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' upgrade-manager full none none http://172.24.12.10/builds/data/buildbot/935/Product/Device/installation/tfb/tfb64-4.2.X.XXXXX.tar.gz' on remote host.
+2015-09-10 13:43:08,215: DEBUG   : Successfully run installation of new build on TFB 'auto-tfb15-01'. Waiting up to 20 seconds.
+2015-09-10 13:43:10,218: DEBUG   : First of all check is replicator running.
+2015-09-10 13:43:10,219: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:43:10,219: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:10,221: WARNING : SSH connection failed: [Errno 61] Connection refused.
+2015-09-10 13:43:10,222: DEBUG   : Got process ID for replicator: E.
+2015-09-10 13:43:10,222: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:10,224: WARNING : SSH connection failed: [Errno 61] Connection refused.
+2015-09-10 13:43:10,224: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 9 times.
+2015-09-10 13:43:12,229: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:34,337: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:43:34,337: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 8 times.
+2015-09-10 13:43:36,343: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:42,357: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:43:42,357: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 7 times.
+2015-09-10 13:43:44,359: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:51,367: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:43:51,367: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 6 times.
+2015-09-10 13:43:53,371: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:43:57,387: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:43:57,387: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 5 times.
+2015-09-10 13:43:59,389: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:05,407: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:05,407: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 4 times.
+2015-09-10 13:44:07,409: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:14,416: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:14,417: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 3 times.
+2015-09-10 13:44:16,418: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:22,536: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:22,537: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 2 times.
+2015-09-10 13:44:24,542: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:31,556: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:31,557: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 1 times.
+2015-09-10 13:44:33,561: ERROR   : It takes too long to get reply. Something is wrong!
+2015-09-10 13:44:33,562: ERROR   : Cannot read FW version from 'diag config'. It didn't reply.
+2015-09-10 13:44:33,562: DEBUG   : TFB 'auto-tfb15-01' didn't come on-line after FW upgrate in 2 seconds.
+2015-09-10 13:44:35,563: DEBUG   : First of all check is replicator running.
+2015-09-10 13:44:35,563: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:44:35,564: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:41,586: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:41,586: DEBUG   : Got process ID for replicator: E.
+2015-09-10 13:44:41,587: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:47,606: WARNING : SSH connection failed: [Errno 51] Network is unreachable.
+2015-09-10 13:44:47,606: ERROR   : Failed to execute remote command 'cmd diag configWill wait and then retry 9 times.
+2015-09-10 13:44:49,609: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:50,183: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:44:51,188: WARNING : Command didn't return expected result. Will wait and then re-run 8 times.
+2015-09-10 13:44:53,192: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:53,324: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:44:53,933: WARNING : Command didn't return expected result. Will wait and then re-run 7 times.
+2015-09-10 13:44:55,938: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:56,090: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:44:56,726: WARNING : Command didn't return expected result. Will wait and then re-run 6 times.
+2015-09-10 13:44:58,731: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:44:58,863: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:44:59,499: WARNING : Command didn't return expected result. Will wait and then re-run 5 times.
+2015-09-10 13:45:01,501: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:01,662: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:02,263: WARNING : Command didn't return expected result. Will wait and then re-run 4 times.
+2015-09-10 13:45:04,267: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:04,403: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:05,041: WARNING : Command didn't return expected result. Will wait and then re-run 3 times.
+2015-09-10 13:45:07,044: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:07,197: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:07,834: WARNING : Command didn't return expected result. Will wait and then re-run 2 times.
+2015-09-10 13:45:09,834: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:09,998: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:10,600: WARNING : Command didn't return expected result. Will wait and then re-run 1 times.
+2015-09-10 13:45:12,602: ERROR   : It takes too long to get reply. Something is wrong!
+2015-09-10 13:45:12,602: ERROR   : Cannot read FW version from 'diag config'. It didn't reply.
+2015-09-10 13:45:12,602: DEBUG   : TFB 'auto-tfb15-01' didn't come on-line after FW upgrate in 4 seconds.
+2015-09-10 13:45:14,607: DEBUG   : First of all check is replicator running.
+2015-09-10 13:45:14,608: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:45:14,608: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:14,785: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:45:15,415: DEBUG   : Got process ID for replicator: 1624.
+2015-09-10 13:45:15,416: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:15,546: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:16,175: WARNING : Command didn't return expected result. Will wait and then re-run 9 times.
+2015-09-10 13:45:18,176: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:18,312: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:18,922: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:45:18,923: DEBUG   : FW version from 'diag config' retrived as '4.2.0 (19833) '.
+2015-09-10 13:45:18,923: DEBUG   : After 6 seconds TFB 'auto-tfb15-01' reported FW version: '4.2.0 (19833) '.
+2015-09-10 13:45:18,923: DEBUG   : First of all check is replicator running.
+2015-09-10 13:45:18,923: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:45:18,923: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:19,080: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:45:19,742: DEBUG   : Got process ID for replicator: 1624.
+2015-09-10 13:45:19,742: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:19,917: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:20,528: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:45:20,528: DEBUG   : FW version from 'diag config' retrived as '4.2.0 (19833) '.
+2015-09-10 13:45:20,528: DEBUG   : Validate availability of TFB 'auto-tfb15-01'.
+2015-09-10 13:45:20,528: DEBUG   : First of all check is replicator running.
+2015-09-10 13:45:20,528: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:45:20,528: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:20,700: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:45:21,314: DEBUG   : Got process ID for replicator: 1624.
+2015-09-10 13:45:21,314: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:21,471: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:22,092: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:45:22,093: DEBUG   : Owner ID from 'diag config' retrived as '000000000000000000000000'.
+2015-09-10 13:45:22,093: DEBUG   : First of all check is replicator running.
+2015-09-10 13:45:22,093: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:45:22,093: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:22,227: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:45:22,844: DEBUG   : Got process ID for replicator: 1624.
+2015-09-10 13:45:22,844: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:23,019: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:23,625: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:45:23,626: DEBUG   : Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e2'.
+2015-09-10 13:45:23,626: DEBUG   : Attempting to claim device '5490a7b0a01f46b8350000e2' by user '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:45:25,296: DEBUG   : Device with ID '5490a7b0a01f46b8350000e2' was successfully claimed.
+2015-09-10 13:45:25,297: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:25,476: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+2015-09-10 13:45:30,786: DEBUG   : Replicator process is going to restart on TFB 'auto-tfb15-01'. Waiting 2 seconds.
+2015-09-10 13:45:34,793: DEBUG   : Validate availability of TFB 'auto-tfb15-01'.
+2015-09-10 13:45:34,793: DEBUG   : First of all check is replicator running.
+2015-09-10 13:45:34,794: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:45:34,794: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:34,935: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:45:35,587: DEBUG   : Got process ID for replicator: 3017.
+2015-09-10 13:45:35,587: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:35,750: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:36,359: WARNING : Command didn't return expected result. Will wait and then re-run 9 times.
+2015-09-10 13:45:38,363: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:38,521: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:39,159: WARNING : Command didn't return expected result. Will wait and then re-run 8 times.
+2015-09-10 13:45:41,160: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:41,317: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:41,985: WARNING : Command didn't return expected result. Will wait and then re-run 7 times.
+2015-09-10 13:45:43,987: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:44,157: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:44,756: WARNING : Command didn't return expected result. Will wait and then re-run 6 times.
+2015-09-10 13:45:46,759: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:46,900: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:47,586: WARNING : Command didn't return expected result. Will wait and then re-run 5 times.
+2015-09-10 13:45:49,592: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:49,735: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:50,342: WARNING : Command didn't return expected result. Will wait and then re-run 4 times.
+2015-09-10 13:45:52,346: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:52,500: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:53,141: WARNING : Command didn't return expected result. Will wait and then re-run 3 times.
+2015-09-10 13:45:55,142: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:55,295: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:55,951: WARNING : Command didn't return expected result. Will wait and then re-run 2 times.
+2015-09-10 13:45:57,957: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:45:58,133: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:45:58,778: WARNING : Command didn't return expected result. Will wait and then re-run 1 times.
+2015-09-10 13:46:00,783: ERROR   : It takes too long to get reply. Something is wrong!
+2015-09-10 13:46:00,784: ERROR   : Cannot read owner ID from 'diag config'. It didn't reply.
+2015-09-10 13:46:00,784: WARNING : TFB 'auto-tfb15-01' is not claimed in 27.994934082 seconds after CS call.
+2015-09-10 13:46:02,789: DEBUG   : Validate availability of TFB 'auto-tfb15-01'.
+2015-09-10 13:46:02,790: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:02,790: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb15-01'.
+2015-09-10 13:46:02,790: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:46:02,971: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:03,675: DEBUG   : Got process ID for replicator: 3017.
+2015-09-10 13:46:03,675: DEBUG   : Connecting with SSH to the host: '10.25.1.82' over port 2226.
+2015-09-10 13:46:03,850: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:04,533: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:46:04,533: DEBUG   : Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:46:04,534: DEBUG   : TFB 'auto-tfb15-01' was successfully claimed with CS call.
+2015-09-10 13:46:04,534: DEBUG   : Rename TFB.
+2015-09-10 13:46:04,534: DEBUG   : Rename device to 'auto-tfb15-01'.
+2015-09-10 13:46:05,177: DEBUG   : TFB 'auto-tfb15-01' was successfully claimed.
+2015-09-10 13:46:05,177: DEBUG   : All transporters are running version '4.2.0 (19833) '.
+2015-09-10 13:46:05,177: INFO    : ------>>
+2015-09-10 13:46:05,178: INFO    : Going to execute test case 'C34126'.
+2015-09-10 13:46:05,178: DEBUG   : Primary transporter will perform nothing, secondary transporter will perform nothing during synchronization.
+2015-09-10 13:46:05,178: DEBUG   : Getting list of devices and users.
+2015-09-10 13:46:05,178: DEBUG   : Will read list of targets.
+2015-09-10 13:46:05,178: DEBUG   : Found 2 targets.
+2015-09-10 13:46:05,178: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 13:46:05,178: DEBUG   : Will read list of users.
+2015-09-10 13:46:05,178: DEBUG   : Found 2 users.
+2015-09-10 13:46:05,178: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 13:46:05,178: DEBUG   : Will read list of clients.
+2015-09-10 13:46:05,179: DEBUG   : Found 1 client.
+2015-09-10 13:46:05,179: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 13:46:05,179: DEBUG   : Got URL to send requests to CS - https://dws.connecteddata.com:8078.
+2015-09-10 13:46:05,179: DEBUG   : Will read information from config file 'automation.cfg'.
+2015-09-10 13:46:05,216: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:46:05,704: DEBUG   : Got customer ID (54c7b9b883b37d1421d465b9) for org admin (automation).
+2015-09-10 13:46:05,704: DEBUG   : Will read information from config file 'auto-qa01.cfg'.
+2015-09-10 13:46:05,705: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:46:06,182: DEBUG   : Got customer ID (54c8041383b37d9136d465b9) for regular user (auto-qa01).
+2015-09-10 13:46:06,182: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 13:46:06,227: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:46:06,227: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:06,227: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:46:06,227: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:06,705: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:07,342: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:46:07,342: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:07,727: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:08,334: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:46:08,334: DEBUG   : Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:46:08,335: ERROR   : Cannot claim TFB 'auto-tfb30-01'. It is already claimed.
+2015-09-10 13:46:08,335: ERROR   : Cannot execute test case: environment is not ready.
+2015-09-10 13:46:08,335: WARNING : Test case 'C34126' was blocked by evironment error.
+2015-09-10 13:46:08,335: INFO    : Will retry to execute test case on clean setup.
+2015-09-10 13:46:08,335: DEBUG   : Perform clean-up procedure.
+2015-09-10 13:46:08,335: DEBUG   : Will read list of targets.
+2015-09-10 13:46:08,335: DEBUG   : Found 2 targets.
+2015-09-10 13:46:08,336: DEBUG   : Target's list: ['auto-tfb30-01', 'auto-tfb15-01']
+2015-09-10 13:46:08,336: DEBUG   : Will read list of users.
+2015-09-10 13:46:08,336: DEBUG   : Found 2 users.
+2015-09-10 13:46:08,336: DEBUG   : User's list: ['automation', 'auto-qa01']
+2015-09-10 13:46:08,336: DEBUG   : Will read list of clients.
+2015-09-10 13:46:08,336: DEBUG   : Found 1 client.
+2015-09-10 13:46:08,336: DEBUG   : Client's list: ['win7x64-02']
+2015-09-10 13:46:08,336: DEBUG   : Will read information from config file 'automation.cfg'.
+2015-09-10 13:46:08,337: DEBUG   : Delete all pools belongs to user automation, if any.
+2015-09-10 13:46:08,337: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:46:08,825: DEBUG   : Get list of pools (pool ids) for user with id '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:46:09,398: DEBUG   : User automation has no pools to delete.
+2015-09-10 13:46:09,398: DEBUG   : Will read information from config file 'auto-qa01.cfg'.
+2015-09-10 13:46:09,399: DEBUG   : Delete all pools belongs to user auto1.org1, if any.
+2015-09-10 13:46:09,399: DEBUG   : Attempt to get customer ID by account name.
+2015-09-10 13:46:09,869: DEBUG   : Get list of pools (pool ids) for user with id '54c8041383b37d9136d465b9'.
+2015-09-10 13:46:10,364: DEBUG   : Found 2 pools for user auto1.org1 (user ID '54c8041383b37d9136d465b9').
+2015-09-10 13:46:10,364: DEBUG   : Attempting to delete pool.
+2015-09-10 13:46:10,838: ERROR   : Pool with ID '54c804136cad8ebdb259ae99' was not deleted. Error code is 500.
+2015-09-10 13:46:10,838: WARNING : Unable delete pool with ID '54c804136cad8ebdb259ae99' (auto1.org1).
+2015-09-10 13:46:10,838: DEBUG   : Attempting to delete pool.
+2015-09-10 13:46:11,640: DEBUG   : Pool with ID '55f1cec1bc05396e05d8dc9e' was successfully deleted.
+2015-09-10 13:46:11,640: DEBUG   : Pool with ID '55f1cec1bc05396e05d8dc9e' successfully deleted.
+2015-09-10 13:46:11,641: DEBUG   : Reset all transporters, if they are claimed.
+2015-09-10 13:46:11,641: DEBUG   : Will read information from config file 'auto-tfb30-01.target'.
+2015-09-10 13:46:11,642: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:46:11,642: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:11,642: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:46:11,642: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:11,799: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:12,432: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:46:12,432: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:12,611: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:13,232: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:46:13,232: DEBUG   : Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:46:13,233: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:13,233: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:46:13,233: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:13,439: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:14,072: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:46:14,072: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:14,251: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:14,893: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:46:14,893: DEBUG   : Owner ID from 'diag config' retrived as '54c7b9b883b37d1421d465b9'.
+2015-09-10 13:46:14,893: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:14,893: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:46:14,893: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:15,066: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:15,716: DEBUG   : Got process ID for replicator: 2817.
+2015-09-10 13:46:15,716: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:15,897: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:16,506: DEBUG   : Got expected result from command 'cmd diag config'.
+2015-09-10 13:46:16,506: DEBUG   : Device ID from 'diag config' retrived as '5490a7b0a01f46b8350000e9'.
+2015-09-10 13:46:16,506: DEBUG   : Attempting to reset device
+2015-09-10 13:46:17,853: DEBUG   : Device with ID '5490a7b0a01f46b8350000e9' was successfully reset.
+2015-09-10 13:46:17,853: DEBUG   : Archiving and storing replicator logs.
+2015-09-10 13:46:17,853: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:18,135: DEBUG   : Executing command 'tar -zcvf 2015Sep10-134617_replicator_logs_from_TFB_auto-tfb30-01.tar.gz /replicator/logs' on remote host.
+2015-09-10 13:46:18,842: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:19,025: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+2015-09-10 13:46:26,415: DEBUG   : Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 2 seconds.
+2015-09-10 13:46:28,415: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:28,592: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+2015-09-10 13:46:32,313: DEBUG   : Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 2 seconds.
+2015-09-10 13:46:34,314: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:34,489: DEBUG   : Executing command 'echo 2iko.8gas|sudo -S -p '' /etc/init.d/replicator restart' on remote host.
+2015-09-10 13:46:38,184: DEBUG   : Replicator process is going to restart on TFB 'auto-tfb30-01'. Waiting 2 seconds.
+2015-09-10 13:46:42,189: DEBUG   : Validate availability of TFB 'auto-tfb30-01'.
+2015-09-10 13:46:42,190: DEBUG   : First of all check is replicator running.
+2015-09-10 13:46:42,190: DEBUG   : Will check process id for 'replicator' process on TFB 'auto-tfb30-01'.
+2015-09-10 13:46:42,190: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:42,416: DEBUG   : Executing command 'pidof replicator' on remote host.
+2015-09-10 13:46:43,074: DEBUG   : Got process ID for replicator: 4762.
+2015-09-10 13:46:43,074: DEBUG   : Connecting with SSH to the host: '10.25.1.63' over port 2294.
+2015-09-10 13:46:43,456: DEBUG   : Executing command 'cmd diag config' on remote host.
+2015-09-10 13:46:44,099: WARNING : Command didn't return expected result. Will wait and then re-run 9 times.

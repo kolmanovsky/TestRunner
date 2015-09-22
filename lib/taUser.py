@@ -7,7 +7,7 @@ import os
 import taBackend as css
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('user-lib')
 
 # ==============================================================
 # General function for use with CS
@@ -52,8 +52,33 @@ class autoUser:
         :return: customer id, or False if unable to retrieve.
         """
 
-        testcs = css.autoCS()
-        customerid = testcs.csGetCustomerID(self.cdnname)
+        cs = css.autoCS()
+        customerid = cs.csGetCustomerID(self.cdnname)
 
         return customerid
+
+    def userReset(self):
+        """
+
+        :return:
+        """
+
+        logger.info("Will reset customer "+self.cdnname+".")
+
+        userid = self.getCustomerID()
+
+        cs = css.autoCS()
+
+        pools = cs.csGetCustomerPools(userid)
+        for poolid in pools:
+
+            pname, powner, _ = cs.csGetPoolInfo(poolid)
+
+            result = cs.csDeletePool(poolid,powner)
+            if result  != 'Error':
+                logger.debug("Successfully delete pool  '"+pname+"' assotiated with user '"+self.cdnname+"'.")
+            else:
+                logger.warning("Unable to delete pool '"+pname+"' (pool id="+poolid+") assotiated with user '"+self.cdnname+"'.")
+
+        return 'Success'
 

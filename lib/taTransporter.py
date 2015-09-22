@@ -10,8 +10,10 @@ import socket
 import ConfigParser
 import urllib2
 import taPower as power
+import requests
+from StringIO import StringIO
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('tfb-lib')
 
 # ==============================================================
 # General function for Test Runner
@@ -205,65 +207,54 @@ class taTransporter:
         else:
             return 'Claimed'
 
-    def installBuild(self):
+    def buildInstall(self, build):
+        """
 
-        if self.last == 'current':
-            logger.debug("Configuration requires to run on previously installed build.")
-            return 0
-        elif self.last == 'last':
-            logger.debug("Configuration requires to install latest build.")
-            build = self.buildFinder()
-        else:
-            logger.debug("Configuration requires build from "+self.last)
-            build = self.last
+        :param build:
+        :return:
+        """
 
-        if build == 'Error':
-            logger.warning("Something went wrong when was finding the build. Will skipp installation.")
-            return 99
-        else:
-            logger.debug("Build path is: "+build)
-
-            for x in range(1,self.maxwait):
-                try:
-                    ret = urllib2.urlopen(build)
-                    break
-                except:
-                    logger.warning("Something went wrong when try to access the build. Will re-try in "+str(self.timeout)+" seconds.")
-                    time.sleep(self.timeout)
-
-            if ret.code == 200:
-                logger.debug("Build exists at "+build)
-            else:
-               logger.error("Build is not available. Will skip installation.")
-               return 99
-
-
-            cmd = "upgrade-manager full none none "+build
-
-            install = self.sshSudo(cmd)
-            if install == 'Error':
-                logger.error("Was not able to install new build on "+self.type+" '"+self.name+"'.")
-                return 13
-            else:
-                logger.debug("Successfully run installation of new build on "+self.type+" '"+self.name+"'. Waiting up to "+str(10*self.timeout)+" seconds.")
-
-            flag = 1
-            for x in range (1,2*self.maxwait):
+        for x in range(1,self.maxwait):
+            try:
+                ret = urllib2.urlopen(build)
+                break
+            except:
+                logger.warning("Something went wrong when try to access the build. Will re-try in "+str(self.timeout)+" seconds.")
                 time.sleep(self.timeout)
-                version = self.readFWversion()
-                if version == 'Error':
-                    logger.debug(self.type +" '"+self.name+"' didn't come on-line after FW upgrate in "+str(x*self.timeout)+" seconds.")
-                    flag = 1
-                else:
-                    logger.debug("After "+str(x*self.timeout)+" seconds "+self.type+" '"+self.name+"' reported FW version: '"+version+"'.")
-                    flag = 0
-                    break
 
-            if flag == 1:
-                logger.error(self.type +" '"+self.name+"' didn't come on-line after FW upgrate.")
-                return 13
+        if ret.code == 200:
+            logger.debug("Build exists at "+build)
+        else:
+            logger.error("Build is not available. Will skip installation.")
+            return 99
+
+
+        cmd = "upgrade-manager full none none "+build
+
+        install = self.sshSudo(cmd)
+        if install == 'Error':
+            logger.error("Was not able to install new build on "+self.type+" '"+self.name+"'.")
+            return 13
+        else:
+            logger.debug("Successfully run installation of new build on "+self.type+" '"+self.name+"'. Waiting up to "+str(10*self.timeout)+" seconds.")
+
+        flag = 1
+        for x in range (1,2*self.maxwait):
+            time.sleep(self.timeout)
+            version = self.readFWversion()
+            if version == 'Error':
+                 logger.debug(self.type +" '"+self.name+"' didn't come on-line after FW upgrate in "+str(x*self.timeout)+" seconds.")
+                 flag = 1
             else:
-                return 0
+                 logger.debug("After "+str(x*self.timeout)+" seconds "+self.type+" '"+self.name+"' reported FW version: '"+version+"'.")
+                 flag = 0
+                 break
+
+        if flag == 1:
+            logger.error(self.type +" '"+self.name+"' didn't come on-line after FW upgrate.")
+            return 13
+        else:
+            return 0
 
     def buildFinder(self):
 
@@ -328,6 +319,49 @@ class taTransporter:
 
         return builds[0]
 
+    def buildCheck(self):
+        """
+
+        :return:
+        """
+
+        if self.last == 'current':
+            logger.debug("Configuration requires to run on previously installed build.")
+            return 'Success'
+        elif self.last == 'last':
+            logger.debug("Configuration requires to install latest build.")
+            build = self.buildFinder()
+            if build == 'Error':
+                logger.warning("Something went wrong when was finding the build. Will skipp installation.")
+                return 'Error'
+            else:
+                logger.debug("Build path is: "+build)
+            build_file = build[:44] + '/Product/Device/replicator/version/version.txt'
+            r = requests.get(build_file)
+            f = StringIO(r.content)
+            build_ver = f.readline()[8:21]
+        else:
+            logger.debug("Configuration requires build from "+self.last)
+            build_ver = 'forgetit'
+
+        # Compare installed version with build version
+        if build_ver == 'forgetit':
+            logger.debug("Configuration requires specific build. It will be installed no matter what.")
+        else:
+            logger.debug("Will compare FW version on device versus build version.")
+            tfb_ver = self.readFWversion()
+            if tfb_ver.replace(' ','') == build_ver.replace(' ',''):
+                logger.info("Build has same version as FW installed on "+self.type+" '"+self.name+"'. Will skip installation.")
+                return 'Success'
+
+        result = self.buildInstall(build)
+        if result == 'Error':
+            logger.error("Failed to install FW from "+build+".")
+            return 'Error'
+
+        return 'Success'
+
+
     def cmdSyncer(self,switch):
 
             syncer = 'cmd syncer '+switch
@@ -365,7 +399,7 @@ class taTransporter:
 
     def getPoolId(self,poolname):
 
-        logger.debug("Retrive pool ID by pool name on device, which is "+poolname)
+        logger.debug("Retrive pool ID by pool name, which is "+poolname+" on "+self.type+" '"+self.name+"'.")
         reply = self.sshCmd('cmd pools|grep "Pool:"')
         pool_line = ''
 
@@ -767,8 +801,8 @@ class taTransporter:
 
         for x in range (1,2*self.maxwait):
             response = self.sshCmd('hostname')
-            if response.lower() != 'error':
-                logger.debug("Device accessable over SSH. Response was "+response)
+            if response != 'Error':
+                logger.debug("Device accessable over SSH. Response was "+response[0])
                 return 'Success'
             else:
                 time.sleep(self.timeout)
