@@ -216,3 +216,13 @@ class taTestbed:
 
         return result
 
+    def getAdminID(self):
+        """
+
+        :return:
+        """
+
+        user = usr.autoUser('automation')
+        admin_id = user.getCustomerID()
+
+        return admin_id

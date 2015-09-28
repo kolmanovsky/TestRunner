@@ -11,6 +11,7 @@ from inspect import ismethod
 
 sys.path.append(os.path.join(os.getcwd(),'lib'))
 sys.path.append(os.path.join(os.getcwd(),'testsuites'))
+sys.path.append(os.path.join(os.getcwd(),'users'))
 
 # ==============================================================
 # Parsing arguments

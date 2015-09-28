@@ -80,7 +80,7 @@ class autoCS:
         Send request to CS to add new pool
         :return: poolid - success, 13 - fail to add pool
         """
-        logger.debug("Attempting to create pool.")
+        logger.debug("Attempting to create pool '"+poolname+"'.")
 
         localpath = "/."+poolname
 
