@@ -119,6 +119,7 @@ def main():
     logger.info("Test execution starts "+time.strftime("%d-%b-%Y at %H:%M:%S %Z",time.localtime(start_time)))
     logger.info("Test execution based on "+cfgFile+" file.")
     logger.info("============================================================================================")
+    logger.info("GitHub test - will remove.")
 
     # Get TestRail configuration
     logger.info("Getting TestRail configuration.")
