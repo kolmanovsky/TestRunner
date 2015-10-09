@@ -62,20 +62,20 @@ class taTransporter:
         """
 
         # Check is replicator running by getting process ID for replicator
-        logger.debug("First of all check is replicator running.")
+        logger.debug("Check is replicator running on "+self.type+" '"+self.name+"'.")
         for x in range (1,self.maxwait):
             repcheck = self.pidofReplicator()
             if repcheck == '':
-                logger.warning("Replicator is down. Will try to start it.")
+                logger.warning("On "+self.type+" '"+self.name+"' replicator is down. Will try to start it.")
                 replica = self.cmdReplicator('start')
                 time.sleep(self.timeout)
             else:
-                logger.debug("Got process ID for replicator: "+repcheck+".")
+                logger.debug("Got process ID for replicator on "+self.type+" '"+self.name+"': "+repcheck+".")
                 break
 
         # If process ID for replicator is empty string at this point - script was not able to start replicator
         if repcheck == '':
-            logger.error("Was not able to start replicator. Fatal error.")
+            logger.error("Fatal error. Was not able to start replicator on "+self.type+" '"+self.name+"'.")
             return 'Error'
 
         # Send command to get configuration. Check for key fraze to recognize response.
@@ -83,17 +83,17 @@ class taTransporter:
         for x in range(1,self.maxwait):
             reply = self.sshCmd(cmd)
             if reply == 'Error':
-                logger.error("Failed to execute remote command '"+cmd+"Will wait and then retry "+str(self.maxwait-x)+" times.")
+                logger.error("Failed to execute command '"+cmd+"' on "+self.type+" '"+self.name+"'. Will wait and then retry "+str(self.maxwait-x)+" times.")
                 time.sleep(self.timeout)
             else:
                 for line in reply:
                     if line.startswith("Dumping Diagnostics"):
                         logger.debug("Got expected result from command '"+cmd+"'.")
                         return reply
-                logger.warning("Command didn't return expected result. Will wait and then re-run "+str(self.maxwait-x)+" times.")
+                logger.warning("On "+self.type+" '"+self.name+"' command '"+cmd+"' didn't return expected result. Will retry "+str(self.maxwait-x)+" times.")
                 time.sleep(self.timeout)
 
-        logger.error("It takes too long to get reply. Something is wrong!")
+        logger.error("Something is wrong on "+self.type+" '"+self.name+"'. Didn't get expected reply to command '"+cmd+"'.")
         return 'Error'
 
     def readMacID(self):
@@ -135,6 +135,24 @@ class taTransporter:
             logger.debug("FW version from 'diag config' retrived as '"+version+"'.")
 
         return version
+
+    def readHWtype(self):
+        """
+
+        :return:
+        """
+        # Parse response from 'cmd diag config' for 'Device SubType'
+        response = self.readDiagConfig()
+        if response == 'Error':
+            logger.error("Cannot read device type from 'diag config'. It didn't reply.")
+            return 'Error'
+        else:
+            for line in response:
+                if line.startswith('FDevice SubType'):
+                    dtype = line[30:33]
+            logger.debug("Device type from 'diag config' retrived as '"+dtype+"'.")
+
+        return dtype
 
     def readUUID(self):
         """
@@ -693,12 +711,12 @@ class taTransporter:
         cs = tab.autoCS()
 
         device_id = self.readUUID()
-        if device_id.lower() == 'error':
+        if device_id == 'Error':
             logger.error("Cannot retrieve UUID of "+self.type+" '"+self.name+"'.")
             return 'Error'
 
         admin_id = self.readOwnerID()
-        if admin_id.lower() == 'error':
+        if admin_id == 'Error':
             logger.error("Cannot retrive Owner ID of "+self.type+" '"+self.name+"'.")
             return "Error"
 
@@ -711,26 +729,21 @@ class taTransporter:
         if logsave == 'Error':
             logger.error("Failed to archive logs. Will miss them.")
 
-        # Three extra restart of replicator should not hurt the system :)
-        for x in range (1,3):
-            restart = self.cmdReplicator('restart')
-            if restart.lower() == 'error':
-                logger.error("Failed to restart "+self.type+" '"+self.name+"'.")
-                return 'Error'
-            time.sleep(self.timeout)
+        # Couple extra restarts of replicator should not hurt the system :)
+        chck = self.replicatorStart()
 
         # Validate device was reset
         tStart = time.time()
         for x in range (1,6):
             time.sleep(self.timeout)
             newStat = self.isClaimed()
-            if newStat.lower() != 'unclaimed':
+            if newStat != 'Unclaimed':
                 logger.warning(self.type+" '"+self.name+"' is not reset in "+str(time.time()-tStart)+" seconds after CS call.")
             else:
                 logger.debug(self.type+" '"+self.name+"' was successfully reset with CS call.")
                 break
 
-        if newStat.lower() != 'unclaimed':
+        if newStat != 'Unclaimed':
             logger.error("CS call failed to reset "+self.type+" '"+self.name+"' in "+str(time.time()-tStart)+" seconds.")
             return 'Error'
         else:
@@ -802,7 +815,7 @@ class taTransporter:
         for x in range (1,2*self.maxwait):
             response = self.sshCmd('hostname')
             if response != 'Error':
-                logger.debug("Device accessable over SSH. Response was "+response[0])
+                logger.debug("Device accessable over SSH. Response was "+response[0].strip('\n'))
                 return 'Success'
             else:
                 time.sleep(self.timeout)
@@ -874,35 +887,35 @@ class taTransporter:
         # Check access to transporter
         for x in range (1, 6):
             response = self.waitSSH()
-            if response.lower() == 'error':
+            if response == 'Error':
                 logger.warning("Device '"+self.name+"' cannot be reached over SSH.")
                 chck = self.powerRepower()
                 time.sleep(self.timeout)
             else:
                 break
 
-        if response.lower() == 'error':
+        if response == 'Error':
             logger.error("Unable to SSH to "+self.type+" '"+self.name+"' after several power cycles.")
             return 'Error'
 
         # Check replicator is running
         for x in range (1, 6):
             response = self.waitReplicator()
-            if response.lower() == 'error':
+            if response == 'Error':
                 logger.warning("Cannot get process ID for Replicator on '"+self.name+"'.")
-                chck = self.cmdReplicator('restart')
+                chck = self.replicatorStart()
                 time.sleep(self.timeout)
             else:
                 break
 
-        if response.lower() == 'error':
+        if response == 'Error':
             logger.error("Unable to start replicator on "+self.type+" '"+self.name+"' after several attempts.")
             return 'Error'
 
         # Check device is not claimed
         for x in range (1, 6):
             status = self.isClaimed()
-            if status.lower() == 'unclaimed':
+            if status == 'Unclaimed':
                 logger.debug("Device '"+self.name+"' is in default state.")
                 return 'Success'
             else:
@@ -910,3 +923,40 @@ class taTransporter:
                 time.sleep(self.timeout)
 
         return 'Error'
+
+    def replicatorRestart(self):
+        """
+
+        :return:
+        """
+
+        logger.debug("Attempt to restart replicator on "+self.type+" '"+self.name+"'.")
+
+        for x in range (1,5):
+            if self.pidofReplicator() == '':
+                logger.debug("Cannot restart replicator if it is not running on "+self.type+" '"+self.name+"'. Will start it.")
+                chck = self.cmdReplicator('start')
+            else:
+                logger.debug("Replicator process already running on "+self.type+" '"+self.name+"'. Will restart it.")
+                chck = self.cmdReplicator('restart')
+            time.sleep(self.timeout)
+
+        return 'Success'
+
+    def replicatorStart(self):
+        """
+
+        :return:
+        """
+
+        logger.debug("Attempt to start replicator process on "+self.type+" '"+self.name+"'.")
+
+        for x in range (1,5):
+            if self.pidofReplicator() == '':
+                logger.debug("Replicator process is not running on "+self.type+" '"+self.name+"'. Will start it.")
+                chck = self.cmdReplicator('start')
+                time.sleep(self.timeout)
+            else:
+                logger.debug("Replicator process already running on "+self.type+" '"+self.name+"'.")
+
+        return 'Success'

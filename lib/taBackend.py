@@ -75,19 +75,20 @@ class autoCS:
             logger.error("Device with ID '"+deviceid+"' was not reset. Error code is "+str(claim.status_code)+".")
             return 'Error'
 
-    def csAddPool(self,poolname,creatorid,nas=None):
+    def csAddPool(self,pool,creatorid,nas=None):
         """
-        Send request to CS to add new pool
-        :return: poolid - success, 13 - fail to add pool
+        Send request to CS to create new pool
+        :return: poolid - success, Error - failed to create pool
         """
-        logger.debug("Attempting to create pool '"+poolname+"'.")
 
-        localpath = "/."+poolname
+        logger.debug("Attempting to create pool '"+pool+"'.")
+
+        localpath = "/."+pool
 
         url = self.csurl + "/polcentral/v1_0/pools/"
 
         if nas == None:
-            logger.debug("No NAS object provided, will create pool '"+poolname+"' type 'MW'.")
+            logger.debug("No NAS object provided, will create pool '"+pool+"' type 'MW'.")
             pooltype = 'MW'
             subscribedevices = True
             deviceid = ''
@@ -98,7 +99,7 @@ class autoCS:
             creditname = ''
             overridewarnings = True
         else:
-            logger.debug("NAS object provided, will create pool '"+poolname+"' type 'PS'.")
+            logger.debug("NAS object provided, will create pool '"+pool+"' type 'PS'.")
             pooltype = 'PS'
             subscribedevices = True
             deviceid = ''
@@ -110,7 +111,7 @@ class autoCS:
             overridewarnings = True
 
         payload = {
-            "name": poolname,
+            "name": pool,
             "description":"Pool added by testbot",
             "creatorid": {"$id": creatorid},
             "type":pooltype,
@@ -136,9 +137,6 @@ class autoCS:
         }
         """
 
-        print url
-        print payload
-
         try:
             r = requests.post(url, data=json.dumps(payload))
         except Exception:
@@ -146,11 +144,11 @@ class autoCS:
             return 'Error'
 
         if r.status_code == 200:
-            logger.debug("Pool '"+poolname+"' was successfully created.")
+            logger.debug("Pool '"+pool+"' was successfully created.")
             poolid = r.json()['_id']
             return poolid['$id']
         else:
-            logger.error("Pool '"+poolname+"' was not created. Error code is "+str(r.status_code)+".")
+            logger.error("Pool '"+pool+"' was not created. Error code is "+str(r.status_code)+".")
             return 'Error'
 
     def csDeletePool(self,poolid,usedid):
@@ -474,3 +472,30 @@ class autoCS:
             logger.debug("Invitation was successfully accepted.")
 
         return pool_id
+
+    def csDeleteUser(self,admin,device,user):
+        """
+
+        :param admin:
+        :param device:
+        :param user:
+        :return:
+        """
+        logger.debug("Delete user from device.")
+
+        url = self.csurl + "/polcentral/v1_0/customers/"+admin+"/devices/"+device+"/guests/"+user
+        payload = {"requestorid":admin}
+
+        try:
+            r = requests.delete(url, data=json.dumps(payload))
+        except Exception:
+            logger.error("Exception during api call to delete user from device.")
+            return 'Error'
+
+        if r.status_code == 200:
+            logger.debug("User with ID '"+user+"' was successfully deleted.")
+            return 'Success'
+        else:
+            logger.error("User with ID '"+user+"' was not deleted. Error code is "+str(r.status_code)+".")
+            return 'Error'
+

@@ -203,11 +203,25 @@ class autoClient:
             mountpoint = "$HOME/"+self.mount
             cmd = "mkdir -p "+mountpoint+" && mount_smbfs //"+self.smbuser+":"+self.smbpass+"@"+self.smbserv+"/"+self.smbshare+" $HOME/"+self.mount
 
+        logger.debug("Will mount network storage on '"+self.name+"' using command: '"+cmd+"'.")
+
         conn = rpyc.classic.connect(self.publ)
         try:
             response = conn.modules.os.system(cmd)
         except:
             logger.error("Cannot map network share on "+self.name+".")
+            return 'Error'
+
+        checkpoint = mountpoint+'/shared-disk.txt'
+        checknorm = conn.modules.os.path.normcase(checkpoint)
+
+        logger.debug("To check mounted network FS will search for the '"+checknorm+"'.")
+
+        checker = conn.modules.os.path.isfile(checknorm)
+        if checker:
+            logger.debug("Successfully mounted network storage on '"+self.name+"'.")
+        else:
+            logger.error("Failed to mount network storage on '"+self.name+"'.")
             return 'Error'
 
         return mountpoint
@@ -294,9 +308,20 @@ class autoClient:
         source = result+"/vault"
         destination = self.tpath+poolname+"/vault"
 
-        response = self.copyTree(source,destination)
+        conn = rpyc.classic.connect(self.publ)
+
+        try:
+            src = conn.modules.os.path.normcase(source)
+            dst = conn.modules.os.path.normcase(destination)
+        except:
+            logger.error("Fail to normalize path to the "+self.platform+" standards.")
+            return 'Error'
+
+        logger.debug("Client platform is "+self.platform+". Will copy from "+src+" to "+dst+".")
+
+        response = self.copyTree(src,dst)
         if response == 'Error':
-            logger.error("Failed to plant tree from "+source+" in "+destination+".")
+            logger.error("Failed to plant tree from "+src+" in "+dst+".")
             return 'Error'
 
         last = 1
@@ -320,7 +345,7 @@ class autoClient:
                 x = x + 1
             return 'Error'
 
-        result = self.smbUmount()
+        result = self.smbUmountAll()
         if result == 'Error':
             logger.warning("Failed to unmount network storage from '"+self.name+"'.")
 
@@ -417,24 +442,20 @@ class autoClient:
 
         conn = rpyc.classic.connect(self.publ)
 
-        try:
-            normsrc = conn.modules.os.path.normcase(src)
-            normdst = conn.modules.os.path.normcase(dst)
-        except:
-            logger.error("Fail to normalize path to the "+self.platform+" standards.")
+        if conn.modules.os.path.isdir(dst):
+            logger.debug("'"+dst+" already exists. Will delete it.")
+            result = self.delTree(dst)
+            if result == 'Error':
+                logger.warning("Fail to delete '"+dst+"'. Will try to copy anyway.")
+
+        if conn.modules.os.path.isdir(src):
+            logger.debug("Found source '"+src+"' at '"+self.name+"'.")
+        else:
+            logger.error("Cannot find source '"+src+"' at '"+self.name+"'.")
             return 'Error'
 
-        logger.debug("Client platform is "+self.platform+". Will copy from "+normsrc+" to "+normdst+".")
-
-
-        if conn.modules.os.path.isdir(normdst):
-            logger.debug("'"+normdst+" already exists. Will delete it.")
-            result = self.delTree(normdst)
-            if result == 'Error':
-                logger.warning("Fail to delete '"+normdst+"'. Will try to copy anyway.")
-
         try:
-            treestat = conn.modules.shutil.copytree(normsrc,normdst,symlinks=False,ignore=None)
+            treestat = conn.modules.shutil.copytree(src,dst,symlinks=False,ignore=None)
         except conn.modules.shutil.Error as e:
             logger.error('Directory not copied. Error: %s' % e)
             return 'Error'

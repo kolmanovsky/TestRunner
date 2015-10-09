@@ -13,5 +13,5 @@ sn=CDC150440098
 
 [build]
 build=last
-firmware=4.2
+firmware=4.3
 type=dev

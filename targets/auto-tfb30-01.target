@@ -10,8 +10,9 @@ password=2iko.8gas
 type=TFB
 power=8
 sn=CDC150450297
+mac=FC:2A:54:00:AD:84
 
 [build]
 build=last
-firmware=4.2
+firmware=4.3
 type=dev

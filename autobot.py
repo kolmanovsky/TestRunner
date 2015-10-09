@@ -171,17 +171,17 @@ def main():
 
         testbed = ta.taTestbed(suite.suiteid)
 
-        for x in range (1,4):
-            status = testbed.checksetup()
+        for x in range (1,3):
+            status = testbed.setupCheck()
             if status == 'Error':
                 logger.error("Testbed is not ready for execution tests from '"+suite.suiteid+": "+suite.suitename+"'.")
-                chck = testbed.cleanup()
+                chck = testbed.setupReset()
                 time.sleep(timeout)
             else:
                 logger.info("Testbed is ready for execution tests from '"+suite.suiteid+": "+suite.suitename+"'.")
                 break
 
-        result = testbed.targetset()
+        result = testbed.tfbSet()
         if result == 'Error':
             status = result
 
@@ -190,7 +190,7 @@ def main():
             tc_count = 0
 
         trrun = testbed.trrun
-        version = testbed.targetver()
+        version = testbed.tfbVersion()
 
         for testcase in tcases:
             logger.info("------>>")
@@ -223,7 +223,7 @@ def main():
 
             if result in (1,13,99):
                 logger.info("Will retry to execute test case on clean setup.")
-                chck = testbed.cleanup()
+                chck = testbed.setupReset()
                 result = tc(testbed)
                 if result == 0:
                     message = "Test case '"+testcase+"' conditionly passed."

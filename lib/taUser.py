@@ -29,6 +29,8 @@ class autoUser:
        conf = ConfigParser.RawConfigParser()
        conf.read(list)
 
+       self.name = name
+
        try:
            self.sysname = conf.get('system','user')
            self.syspass = conf.get('system','pass')
@@ -71,9 +73,7 @@ class autoUser:
 
         pools = cs.csGetCustomerPools(userid)
         for poolid in pools:
-
             pname, powner, _ = cs.csGetPoolInfo(poolid)
-
             result = cs.csDeletePool(poolid,powner)
             if result  != 'Error':
                 logger.debug("Successfully delete pool  '"+pname+"' assotiated with user '"+self.cdnname+"'.")

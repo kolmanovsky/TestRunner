@@ -75,7 +75,7 @@ class taTestbed:
 
         return systems
 
-    def getsetup(self):
+    def setupGet(self):
 
         logger.debug("Getting testbed configuration.")
 
@@ -97,12 +97,12 @@ class taTestbed:
 
         return clients, targets, users
 
-    def checksetup(self):
+    def setupCheck(self):
 
         logger.info("Check availability of all testbed components.")
 
         # Get setup
-        clients, targets, users = self.getsetup()
+        clients, targets, users = self.setupGet()
         if clients[0].lower() == 'error':
             logger.error("Failed to read setup for test suite. Cannot proceed.")
             return 'Error'
@@ -136,19 +136,47 @@ class taTestbed:
                 logger.debug("User '"+user+"' passed pre-fly check. Has CID "+status+".")
         return 'Success'
 
-    def cleanup(self):
+    def setupReset(self):
 
         logger.info("Attempt to bring testbed into default state.")
 
         # Get setup
-        clients, targets, users = self.getsetup()
+        clients, targets, users = self.setupGet()
         if clients[0] == 'Error':
             logger.error("Failed to read setup for test suite. Cannot proceed.")
             return 'Error'
 
+        # Reset admin
+        customer = usr.autoUser('automation')
+        result = customer.userReset()
+
+        # Reset targets
+        thread_list = []
+
+        for target in targets:
+            logger.debug("Initiated thread for '"+target+"'.")
+            t = threading.Thread(target=self.tfbReset, args=(target,))
+            thread_list.append(t)
+
+        for thread in thread_list:
+            thread.start()
+
+        for thread in thread_list:
+            thread.join()
+
+        # Reset users
+        thread_list = []
+
         for user in users:
-            customer = usr.autoUser(user)
-            result = customer.userReset()
+            logger.debug("Initiated thread for '"+user+"'.")
+            t = threading.Thread(target=self.userReset, args=(user,))
+            thread_list.append(t)
+
+        for thread in thread_list:
+            thread.start()
+
+        for thread in thread_list:
+            thread.join()
 
 
         # Reset clients
@@ -161,17 +189,8 @@ class taTestbed:
             else:
                 logger.info("Client '"+client+"' was successfully reset.")
 
-        # Reset targets
-        for target in targets:
-            system = tfb.taTransporter(target)
-            status = system.reset()
-            if status == 'Error':
-                logger.error("Unable to reset '"+target+"'.")
-                return 'Error'
-            else:
-                logger.info("Target '"+target+"' was successfully reset.")
 
-    def targetset(self):
+    def tfbSet(self):
 
         devices = self.targets.split(',')
 
@@ -185,7 +204,7 @@ class taTestbed:
 
         return 'Success'
 
-    def targetver(self):
+    def tfbVersion(self):
         """
 
         :return:
@@ -216,7 +235,7 @@ class taTestbed:
 
         return result
 
-    def getAdminID(self):
+    def userAdminId(self):
         """
 
         :return:
@@ -226,3 +245,41 @@ class taTestbed:
         admin_id = user.getCustomerID()
 
         return admin_id
+
+    def tfbReset(self,target):
+        """
+
+        :param target:
+        :return:
+        """
+
+        device = tfb.taTransporter(target)
+
+        logger.debug("Reset "+device.type+" '"+device.name+"' to default state.")
+
+        status = device.reset()
+        if status == 'Error':
+            logger.error("Unable to reset device '"+target+"'.")
+            return 'Error'
+        else:
+            logger.debug("Device '"+target+"' was successfully reset.")
+            return 'Success'
+
+    def userReset(self,customer):
+        """
+
+        :param customer:
+        :return:
+        """
+
+        user = usr.autoUser(customer)
+
+        logger.debug("Reset user '"+user.name+"', aka '"+user.cdemail+"'.")
+
+        status = user.userReset()
+        if status == 'Error':
+            logger.error("Unable to reset user '"+customer+"'.")
+            return 'Error'
+        else:
+            logger.debug("User '"+customer+"' was successfully reset.")
+            return 'Success'
