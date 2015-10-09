@@ -1,3 +1,0 @@
-2015-09-18 13:00:47,645: DEBUG   : Start replicator after crash.
-2015-09-18 13:00:47,645: DEBUG   : Transporter will perform crash, then nothing and then check start-up scan.
-2015-09-18 13:00:47,645: DEBUG   : Getting list of devices and users.
