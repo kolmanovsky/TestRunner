@@ -161,6 +161,9 @@ def main():
 
         testbed = ta.taTestbed(suite.suiteid)
 
+        testcases = tr.send_get('get_tests/'+run_id)
+        tc_count = len(testcases)
+
         for x in range (1,3):
             status = testbed.setupCheck()
             if status == 'Error':
@@ -184,8 +187,6 @@ def main():
 
         run_id = trun[1:]
 
-        testcases = tr.send_get('get_tests/'+run_id)
-
         for testcase in testcases:
             logger.info("------>>")
             tc_id = testcase['case_id']
@@ -202,7 +203,7 @@ def main():
 
             tc_start = crest * int((timeout+quest)/2)+guest
 
-            message = "Test case '"+testcase+"' passed."
+            message = "Test case '"+test_name+"' passed."
 
             logger.info(message)
 
@@ -215,10 +216,7 @@ def main():
                 rCode = tr.send_post(tr_command,payload)
                 logger.debug("Execution result of test case '"+testcase+"' was successfully submitted to the TestRail.")
             except:
-                logger.error("Result submition for test case '"+testcase+"' caused an error.")
-
-
-
+                logger.error("Result submission for test case '"+testcase+"' caused an error.")
 
         logger.info("---> Summary for '"+suite.suiteid+": "+suite.suitename+"'.")
         logger.info("Executed "+str(tc_count)+" test cases.")
