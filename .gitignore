@@ -10,3 +10,7 @@
 *.pyc
 
 *.log
+
+*.tmp
+
+*.pyc
