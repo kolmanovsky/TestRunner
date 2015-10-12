@@ -17,7 +17,7 @@ class testSuite:
 
         self.testcases = ['C35645']
         self.suiteid = 'S369'
-        self.suitename = "AUTO: Multy transporter sync"
+        self.suitename = "AUTO: Multi transporter sync"
         self.pool = 'AUTO_'+self.suiteid
         self.timeout = int(cfg.get('general','timeout'))
         self.wide = 5

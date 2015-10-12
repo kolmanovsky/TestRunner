@@ -15,8 +15,8 @@ class testSuite:
 
     def __init__(self):
 
-        self.testcases = ['C34209']
-        #self.testcases = ['C34209','C34210','C34211','C34212','C34213','C34214','C34215','C34216','C34217','C34218']
+        #self.testcases = ['C34209']
+        self.testcases = ['C34209','C34210','C34211','C34212','C34213','C34214','C34215','C34216','C34217','C34218']
         self.suiteid = 'S360'
         self.suitename = "AUTO: Graceful shutdown"
         self.pool = 'AUTO_'+self.suiteid
@@ -89,45 +89,31 @@ class testSuite:
         devices = testbed.getlist('target')
         users = testbed.getlist('user')
         clients = testbed.getlist('client')
-        if len(users) < 2:
-            logger.error("This test requires at least 2 users. "+str(len(users))+" defined.")
-            return 99
 
         cs = css.autoCS()
         cs_url = cs.csurl
         logger.debug("Got URL to send requests to CS - "+cs_url+".")
 
-        orgadmin = usr.autoUser(users[0])
-        admin_id = orgadmin.getCustomerID()
-        logger.debug("Got customer ID ("+admin_id+") for org admin ("+users[0]+").")
+        # Get admins ID
+        admin_id = testbed.userAdminId()
 
         customer = usr.autoUser(users[1])
         customer_id = customer.getCustomerID()
         logger.debug("Got customer ID ("+customer_id+") for regular user ("+users[1]+").")
 
-        # Claim primary transporter (first from the list of devices)
-        primo = tfb.taTransporter(devices[0])
-        status = primo.deviceClaim(cs,admin_id)
-        if status == 99:
-            logger.error("Cannot execute test case: environment is not ready.")
-            return 99
-        elif status == 13:
-            logger.error("Cannot claim "+primo.type+" '"+primo.name+"'.")
-            return 13
-        else:
-            logger.debug(primo.type+" '"+primo.name+"' was successfully claimed.")
+        # Claim transporters
+        for device in devices:
+            transporter = tfb.taTransporter(device)
+            status = transporter.deviceClaim(cs,admin_id)
+            if status != 0:
+                logger.error("Cannot claim "+transporter.type+" '"+transporter.name+"'.")
+                return 13
+            else:
+                logger.debug(transporter.type+" '"+transporter.name+"' was successfully claimed.")
 
-        # Claim secondary transporter (second from the list of devices)
-        secundo = tfb.taTransporter(devices[1])
-        status = secundo.deviceClaim(cs,admin_id)
-        if status == 99:
-            logger.error("Cannot execute test case: environment is not clean.")
-            return 99
-        elif status == 1:
-            logger.error("Cannot claim "+secundo.type+" '"+secundo.name+"'.")
-            return 13
-        else:
-            logger.debug(secundo.type+" '"+secundo.name+"' was claimed.")
+        # Will wait to let transporters find each other
+        logger.debug("Will wait "+str(self.timeout)+" seconds to let transporters find each other.")
+        time.sleep(self.timeout)
 
         # Will use client to plant directory tree in the pool
         seller = clt.autoClient(clients[0])

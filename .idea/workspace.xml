@@ -27,8 +27,8 @@
       <file leaf-file-name="taTestbed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/taTestbed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1615">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+              <caret line="138" column="25" selection-start-line="138" selection-start-column="25" selection-end-line="138" selection-end-column="25" />
               <folding>
                 <element signature="e#49#58#0" expanded="true" />
               </folding>
@@ -36,15 +36,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autobot.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/autobot.py">
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89021736" vertical-offset="1306" max-vertical-offset="4556">
-              <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3024" max-vertical-offset="3944">
+              <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
-                <element signature="e#1113#1328#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bot.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,74 +61,74 @@
       <file leaf-file-name="taBackend.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/taBackend.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2125">
               <caret line="475" column="45" selection-start-line="475" selection-start-column="45" selection-end-line="475" selection-end-column="45" />
               <folding>
-                <element signature="e#48#71#0" expanded="true" />
+                <element signature="e#2594#4986#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taTransporter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/taTransporter.py">
+      <file leaf-file-name="autobot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autobot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
-              <caret line="945" column="30" selection-start-line="945" selection-start-column="30" selection-end-line="945" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2754" max-vertical-offset="4471">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <element signature="e#48#71#0" expanded="true" />
-                <element signature="e#1637#1765#1" expanded="false" />
+                <element signature="e#48#57#0" expanded="true" />
+                <element signature="e#1348#9350#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taUser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/taUser.py">
+      <file leaf-file-name="S329.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testsuites/S329.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="986">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#48#71#0" expanded="true" />
-                <element signature="e#402#1284#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="S369.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testsuites/S369.py">
+      <file leaf-file-name="auto-tfb15-01.target" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/targets/auto-tfb15-01.target">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="2754">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#48#59#0" expanded="true" />
-                <element signature="e#1218#6639#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taClient.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/taClient.py">
+      <file leaf-file-name="auto-tfb30-01.target" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/targets/auto-tfb30-01.target">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-              <caret line="296" column="33" selection-start-line="296" selection-start-column="33" selection-end-line="296" selection-end-column="33" />
-              <folding>
-                <element signature="e#49#58#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taPower.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/taPower.py">
+      <file leaf-file-name="auto-tfb75-01.target" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/targets/auto-tfb75-01.target">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-              <folding>
-                <element signature="e#23#32#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto-tfb150-01.target" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/targets/auto-tfb150-01.target">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29565218" vertical-offset="0" max-vertical-offset="920">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,7 +161,6 @@
         <option value="$PROJECT_DIR$/soup.py" />
         <option value="$PROJECT_DIR$/lib/taPower.py" />
         <option value="$PROJECT_DIR$/testsuites/S358.py" />
-        <option value="$PROJECT_DIR$/testsuites/S360.py" />
         <option value="$PROJECT_DIR$/testsuites/S360.cfg" />
         <option value="$PROJECT_DIR$/clients/win7x64-02.cfg" />
         <option value="$PROJECT_DIR$/users/auto-qa02.cfg" />
@@ -171,8 +179,11 @@
         <option value="$PROJECT_DIR$/lib/taClient.py" />
         <option value="$PROJECT_DIR$/testsuites/S36x.cfg" />
         <option value="$PROJECT_DIR$/autobot.cfg" />
-        <option value="$PROJECT_DIR$/testsuites/S369.py" />
         <option value="$PROJECT_DIR$/autobot.py" />
+        <option value="$PROJECT_DIR$/bot.cfg" />
+        <option value="$PROJECT_DIR$/testsuites/S360.py" />
+        <option value="$PROJECT_DIR$/testsuites/S369.py" />
+        <option value="$PROJECT_DIR$/bot.py" />
       </list>
     </option>
   </component>
@@ -205,6 +216,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,7 +307,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -315,11 +326,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lkolmanovsky.ConnectedData\Documents\GitHub\TestRunner" />
       <recent name="$PROJECT_DIR$/clients" />
       <recent name="$PROJECT_DIR$/testsuites" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/targets" />
-      <recent name="$PROJECT_DIR$/users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -518,12 +529,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -536,6 +546,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -571,6 +582,70 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/taBackend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="935">
+          <caret line="475" column="45" selection-start-line="475" selection-start-column="45" selection-end-line="475" selection-end-column="45" />
+          <folding>
+            <element signature="e#48#71#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taTransporter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="1785">
+          <caret line="945" column="30" selection-start-line="945" selection-start-column="30" selection-end-line="945" selection-end-column="30" />
+          <folding>
+            <element signature="e#48#71#0" expanded="true" />
+            <element signature="e#1637#1765#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="986">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#71#0" expanded="true" />
+            <element signature="e#402#1284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S369.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="2754">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#59#0" expanded="false" />
+            <element signature="e#283#516#0" expanded="false" />
+            <element signature="e#730#1021#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="918">
+          <caret line="296" column="33" selection-start-line="296" selection-start-column="33" selection-end-line="296" selection-end-column="33" />
+          <folding>
+            <element signature="e#49#58#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taPower.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="340">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding>
+            <element signature="e#23#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/taTransporter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="1615">
@@ -587,8 +662,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#48#59#0" expanded="true" />
-            <element signature="e#1218#6639#0" expanded="true" />
+            <element signature="e#48#59#0" expanded="false" />
+            <element signature="e#283#516#0" expanded="false" />
+            <element signature="e#730#1021#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -598,7 +674,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="918">
           <caret line="296" column="33" selection-start-line="296" selection-start-column="33" selection-end-line="296" selection-end-column="33" />
           <folding>
-            <element signature="e#49#58#0" expanded="true" />
+            <element signature="e#49#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testbot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="130" column="3" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clients/auto-win7-x86.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -656,13 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11819235" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsuites/S329.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -694,29 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsuites/S360.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsuites/S358.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="213" column="12" selection-start-line="213" selection-start-column="0" selection-end-line="217" selection-end-column="21" />
-          <folding>
-            <element signature="e#995#1125#0" expanded="false" />
-            <element signature="e#1209#1337#0" expanded="false" />
-            <element signature="e#1416#1547#0" expanded="false" />
-            <element signature="e#1618#1747#0" expanded="false" />
-            <element signature="e#1829#1957#0" expanded="false" />
-            <element signature="e#2034#2165#0" expanded="false" />
-            <element signature="e#2234#2363#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/auto-qa01.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25608343" vertical-offset="0" max-vertical-offset="0">
@@ -745,34 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/targets/auto-tfb150-01.target">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28239202" vertical-offset="0" max-vertical-offset="0">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/targets/auto-tfb75-01.target">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28239202" vertical-offset="0" max-vertical-offset="0">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/targets/auto-tfb30-01.target">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30121815" vertical-offset="0" max-vertical-offset="0">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/targets/auto-tfb15-01.target">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28239202" vertical-offset="0" max-vertical-offset="0">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clients/win7x64-01.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -794,27 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autobot.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16943522" vertical-offset="0" max-vertical-offset="0">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testsuites/S369.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11295681" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/taBackend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="475" column="45" selection-start-line="475" selection-start-column="45" selection-end-line="475" selection-end-column="45" />
-          <folding>
-            <element signature="e#48#71#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,7 +817,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="296" column="33" selection-start-line="296" selection-start-column="33" selection-end-line="296" selection-end-column="33" />
           <folding>
-            <element signature="e#49#58#0" expanded="true" />
+            <element signature="e#49#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -833,17 +827,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding>
-            <element signature="e#23#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/taTestbed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#58#0" expanded="true" />
+            <element signature="e#23#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -878,25 +862,169 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testbot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5380435" vertical-offset="627" max-vertical-offset="1955">
+          <caret line="130" column="3" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S329.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#227#514#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S354.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S355.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="920">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#227#508#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S358.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="213" column="12" selection-start-line="213" selection-start-column="0" selection-end-line="217" selection-end-column="21" />
+          <folding>
+            <element signature="e#228#529#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="4250">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#59#0" expanded="false" />
+            <element signature="e#2297#10107#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testsuites/S369.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="2754">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2873">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="e#48#59#0" expanded="true" />
-            <element signature="e#1218#6639#0" expanded="true" />
+            <element signature="e#48#59#0" expanded="false" />
+            <element signature="e#283#516#0" expanded="false" />
+            <element signature="e#730#1021#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taTestbed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <caret line="138" column="25" selection-start-line="138" selection-start-column="25" selection-end-line="138" selection-end-column="25" />
+          <folding>
+            <element signature="e#49#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autobot.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29565218" vertical-offset="0" max-vertical-offset="920">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/taBackend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2125">
+          <caret line="475" column="45" selection-start-line="475" selection-start-column="45" selection-end-line="475" selection-end-column="45" />
+          <folding>
+            <element signature="e#2594#4986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3024" max-vertical-offset="3944">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/autobot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89021736" vertical-offset="1306" max-vertical-offset="4556">
-          <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2754" max-vertical-offset="4471">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="e#48#57#0" expanded="true" />
-            <element signature="e#1113#1328#0" expanded="true" />
+            <element signature="e#1348#9350#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsuites/S329.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/targets/auto-tfb15-01.target">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/targets/auto-tfb30-01.target">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/targets/auto-tfb75-01.target">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/targets/auto-tfb150-01.target">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29565218" vertical-offset="0" max-vertical-offset="920">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
